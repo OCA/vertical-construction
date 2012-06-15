@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="view_account_invoice_line_tree_insulation" model="ir.ui.view">
+	<field name="name">account.invoice.line.tree.insulation</field>
+	<field name="model">account.invoice.line</field>
+	<field name="inherit_id" ref="account.view_invoice_line_tree"/>
+	<field name="type">form</field>
+	<field name="arch" type="xml">
+	  <xpath
+	      expr="//tree[@string='Invoice Line']"
+	      position="replace">
+	    <tree string="Invoice Line">
+	      <field name="name"/>
+	      <field name="account_id" groups="account.group_account_user"/>
+	      <field name="product_insulation" invisible="True"/>
+	      <field name="surface"/>
+	      <field name="rvalue"/>
+	      <field name="quantity" string="Qty(UoM)"/>
+	      <field name="uos_id"/>
+	      <field name="price_unit"/>
+	      <field name="price_subtotal"/>
+	    </tree>
+	  </xpath>	      
+	</field>
+      </record>
+
+      <record id="view_account_invoice_line_form_insulation" model="ir.ui.view">
+	<field name="name">account.invoice.line.form.insulation</field>
+	<field name="model">account.invoice.line</field>
+	<field name="inherit_id" ref="account.view_invoice_line_form"/>
+	<field name="type">form</field>
+	<field name="arch" type="xml">
+	  <xpath
+	      expr="//form/field[@name='name']"
+	      position="after">
+	    <field name="product_insulation" invisible="True"/>
+	    <field name="product_sprayfoam" invisible="True"/>
+	    <field name="surface" attrs="{'invisible':[('product_sprayfoam', '=', False)]} "/>
+	    <newline/>
+	    <field name="rvalue" attrs="{'invisible':[('product_insulation', '=', False)]} "/>
+	    <newline/>	      
+	  </xpath>
+	</field>
+      </record>
+
+      <record id="invoice_form_insulation" model="ir.ui.view">
+	<field name="name">account.invoice.form.insulation</field>
+	<field name="model">account.invoice</field>
+	<field name="inherit_id" ref="account.invoice_form"/>
+	<field name="type">form</field>
+	<field name="arch" type="xml">
+	  <xpath
+	      expr="//button[@string='Print Invoice']"
+	      position="replace">
+	    <button name="%(report_account_invoice_insulation)d" string="Print Invoice" type="action" icon="gtk-print" states="open,paid,proforma,sale,proforma2"/>
+	  </xpath>
+	</field>
+      </record>
+
+    </data>
+</openerp>
