@@ -18,6 +18,7 @@
 		    <separator string="Insulation" colspan="2"/>
 		    <field name="insulation"/>
 		    <field name="rvalue" attrs="{'invisible':[('insulation', '=', False)]}"/>
+		    <field name="sprayfoam" attrs="{'invisible':[('insulation', '=', False)]}"/>
 		  </group>
 		</page>
 <!--

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<record id="area" model="product.uom.categ">
+	    <field name="name">Area</field>
+	</record>
+
+	<record id="board_foot" model="product.uom">
+	    <field name="name">Board foot</field>
+	    <field name="category_id" ref="area"/>
+	    <field name="factor">1</field>
+	</record>
+	
+	<record id="square_foot" model="product.uom">
+	    <field name="name">Square foot</field>
+	    <field name="category_id" ref="area"/>
+	    <field name="factor">1</field>
+	</record>
+
+    </data>
+</openerp>
+

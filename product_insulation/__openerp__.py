@@ -21,7 +21,7 @@
 
 {
     "name" : "Insulation Products",
-    "version" : "0.1",
+    "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
@@ -29,7 +29,12 @@
     "description" : """
     This module allows you to define if a product is an insulation product, by 
     adding a checkbox on the product form. Checking the box enables you to enter
-    the R-value (thermal resistance) of the product.
+    the R-value (thermal resistance) of the product and specify if the insulation
+    is spray foam.
+
+    Insulation products are sold in square foot (UOS) and stored in PCE or weight.
+    Spray foam products are sold in board foot (UOS), calculated from the product 
+    R-value, the sale order line R-value and the area (in sq ft).
 
     More information about the R-value here:
     http://en.wikipedia.org/wiki/R-value_(insulation)
@@ -38,7 +43,10 @@
     "depends" : ["product"],
     "demo" : [],
     "test" : [],
-    "data" : ["product_insulation_view.xml"],
+    "data" : [
+	"product_insulation_data.xml",
+	"product_insulation_view.xml",
+	],
     "installable": True,
     "complexity": "easy",
 }

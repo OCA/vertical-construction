@@ -25,7 +25,8 @@ class product_product_insulation(osv.osv):
     _inherit = 'product.product'
     _columns = {
         'insulation' : fields.boolean('Insulation product', change_default=True),
-        'rvalue' : fields.integer('R-Value'),
+        'rvalue' : fields.integer('R-Value',help="Thermal resistance"),
+        'sprayfoam' : fields.boolean('SPF', help="SPray Foam product uses square foot and R-value to compute the board foot. Choose board foot as the UoS"),
     }
 
 product_product_insulation()
