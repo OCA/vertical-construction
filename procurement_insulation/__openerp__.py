@@ -19,30 +19,23 @@
 #
 ##############################################################################
 
-from osv import fields, osv
-from tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, float_compare
-import decimal_precision as dp
-import netsvc
-
-class account_invoice_line(osv.osv):
-
-    _name = 'account.invoice.line'
-    _inherit = 'account.invoice.line'
-    _columns = {
-        'rvalue' : fields.float('R-Value', change_default=True),
-        'surface' : fields.float('Surface (sq ft)', change_default=True),
-        'product_insulation': fields.boolean('Insulation Product'),
-        'product_rvalue' : fields.integer('R-Value'),
-        'product_sprayfoam': fields.boolean('Spray Foam Product'),
-
-        }
-
-    _defaults = {
-        'product_insulation': False,
-        'product_rvalue': 0.0,
-        'product_sprayfoam': False,
-        'rvalue': 0.0,
-        'surface': 0.0,
-        }
-
-account_invoice_line()
+{
+    "name" : "Procurement Insulation",
+    "version" : "0.1",
+    "author" : "Savoir-faire Linux",
+    "website" : "http://www.savoirfairelinux.com",
+    "license" : "AGPL-3",
+    "category" : "Procurement",
+    "description" : """
+    This module allows one to generate sale orders that calculates the right price for insulation products.
+    """,
+    "depends" : ["procurement"],
+    "images" : [],
+    "test" : [],
+    "demo" : [],
+    "data" : [
+	"procurement_insulation_view.xml",
+	],
+    "installable": True,
+    "complexity": "easy",
+}

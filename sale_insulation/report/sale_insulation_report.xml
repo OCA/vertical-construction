@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      <delete model="ir.actions.report.xml" search="[('report_name','=','sale.order')]" />
+      <report auto="False"
+	      id="report_sale_order_quotation"
+	      model="sale.order"
+	      name="sale.order.quotation"
+	      rml="sale_insulation/report/sale_order_quotation.rml"
+	      string="Quotation / Order"
+	      usage="default"/>
+      
+    </data>
+</openerp>

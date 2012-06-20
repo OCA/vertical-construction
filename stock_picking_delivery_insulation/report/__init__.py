@@ -19,30 +19,4 @@
 #
 ##############################################################################
 
-from osv import fields, osv
-from tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, float_compare
-import decimal_precision as dp
-import netsvc
-
-class account_invoice_line(osv.osv):
-
-    _name = 'account.invoice.line'
-    _inherit = 'account.invoice.line'
-    _columns = {
-        'rvalue' : fields.float('R-Value', change_default=True),
-        'surface' : fields.float('Surface (sq ft)', change_default=True),
-        'product_insulation': fields.boolean('Insulation Product'),
-        'product_rvalue' : fields.integer('R-Value'),
-        'product_sprayfoam': fields.boolean('Spray Foam Product'),
-
-        }
-
-    _defaults = {
-        'product_insulation': False,
-        'product_rvalue': 0.0,
-        'product_sprayfoam': False,
-        'rvalue': 0.0,
-        'surface': 0.0,
-        }
-
-account_invoice_line()
+import stock_picking_delivery_order_insulation

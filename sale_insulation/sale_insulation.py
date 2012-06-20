@@ -5,16 +5,16 @@
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the Affero GNU General Public License as
+#    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    Affero GNU General Public License for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the Affero GNU General Public License
+#    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
@@ -42,18 +42,32 @@ class sale_order(osv.osv):
     def product_id_change(self, cr, uid, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, packaging=False, fiscal_position=False, flag=False, context=None):
-        return super.product_id_change(self, cr, uid, ids, pricelist, product, qty,
+        return super(sale_order, self).product_id_change(self, cr, uid, ids, pricelist, product, qty,
             uom, qty_uos, uos, name, partner_id,
             lang, update_tax, date_order, packaging, fiscal_position, flag, context)
 
     def product_uom_change(self, cursor, user, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, context=None):
-        return super.product_uom_change(self, cursor, user, ids, pricelist, product, qty,
+        return super(sale_order, self).product_uom_change(self, cursor, user, ids, pricelist, product, qty,
             uom, qty_uos, uos, name, partner_id,
             lang, update_tax, date_order, context)
 
+    def _prepare_order_line_procurement(self, cr, uid, order, line, move_id, date_planned, context=None):
+        res = super(sale_order, self)._prepare_order_line_procurement(cr, uid, order, line, move_id, date_planned, context)
+        res['rvalue'] = line.rvalue
+        res['surface'] = line.surface
+        return res
+
+    def _prepare_order_line_move(self, cr, uid, order, line, picking_id, date_planned, context=None):
+        res = super(sale_order, self)._prepare_order_line_move(cr, uid, order, line, picking_id, date_planned, context)
+        res['rvalue'] = line.rvalue
+        res['surface'] = line.surface
+        return res
+
+
 sale_order()
+
 
 class sale_order_line(osv.osv):
     _name = 'sale.order.line'

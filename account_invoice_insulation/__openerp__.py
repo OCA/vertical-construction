@@ -5,16 +5,16 @@
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as
+#    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU General Public License
+#    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
@@ -27,18 +27,17 @@
     "license" : "AGPL-3",
     "category" : "Accounting",
     "description" : """
-    This module allows you to generate invoices with thermal resistance for 
-    insulation products.
+This module allows you to generate invoices with thermal resistance for insulation products.
     """,
     "depends" : [
 	"account",
 	"product_insulation",
 	],
-    "test" : [],
     "images" : [],
+    "test" : [],
     "demo" : [],
     "data" : [
-	"account_invoice_insulation_report.xml",
+	"report/account_invoice_insulation_report.xml",
 	"account_invoice_insulation_view.xml",
 	],
     "installable": True,

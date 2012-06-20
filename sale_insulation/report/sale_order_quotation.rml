@@ -244,7 +244,7 @@
     <para style="P9">
       <font color="white"> </font>
     </para>
-    <blockTable colWidths="10.0,259.0,55.0,55.0,55.0,55.0" style="Tableau8">
+    <blockTable colWidths="10.0,239.0,60.0,60.0,60.0,60.0" style="Tableau8">
       <tr>
         <td>
           <para style="P16">#</para>
@@ -267,7 +267,7 @@
       </tr>
     </blockTable>
     <section>
-      <blockTable colWidths="10.0,259.0,55.0,55.0,55.0,55.0" style="Tableau7">
+      <blockTable colWidths="10.0,239.0,60.0,60.0,60.0,60.0" style="Tableau7">
 	<para>[[repeatIn(o.order_line,'line')]]</para>
         <tr>
           <td>

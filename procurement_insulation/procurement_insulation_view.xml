@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="view_procurement_order_insulation" model="ir.ui.view">
+	<field name="name">procurement.order.form.insulation</field>
+	<field name="model">procurement.order</field>
+	<field name="inherit_id" ref="procurement.procurement_form_view"/>
+	<field name="type">form</field>
+	<field name="arch" type="xml">
+	  <data>
+	    <xpath expr="//field[@name='product_uos']" position="after">
+		<field name="surface"/>
+		<field name="rvalue"/>
+	    </xpath>	      
+	  </data>
+	</field>
+      </record>
+
+    </data>
+</openerp>

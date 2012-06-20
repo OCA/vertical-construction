@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-
       <record id="view_sale_order_insulation" model="ir.ui.view">
 	<field name="name">sale.order.form.insulation</field>
 	<field name="model">sale.order</field>
@@ -92,7 +91,6 @@
 		  icon="gtk-print"
 		  states="draft"/>
 	    </xpath>
-
 	    <xpath
 		expr="//button[@string='Print Order']"
 		position="replace">
@@ -103,10 +101,11 @@
 		  icon="gtk-print"
 		  states="waiting_date,manual,progress,done,shipping_except,invoice_except"/>
 	    </xpath>
+
+	    
 	      
 	  </data>
 	</field>
       </record>
-
     </data>
 </openerp>

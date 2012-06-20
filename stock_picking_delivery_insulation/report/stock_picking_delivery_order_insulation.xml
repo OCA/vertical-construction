@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      <report auto="False"
+          id="report_stock_picking_delivery_order_insulation"
+          model="stock.picking"
+          name="stock.picking.delivery.order.insulation"
+          rml="stock_picking_delivery_insulation/report/stock_picking_delivery_order_insulation.rml"
+          string="Work Order"
+          usage="default"/>
+    </data>
+</openerp>
