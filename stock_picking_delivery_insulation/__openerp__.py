@@ -31,8 +31,8 @@ This module adds area and thermal resistance of insulation products to the
 delivery orders views and report.
     """,
     "depends" : [
-        "stock",
         "product_insulation",
+        "stock_picking_delivery_users",
     ],
     "demo" : [],
     "test" : [],
