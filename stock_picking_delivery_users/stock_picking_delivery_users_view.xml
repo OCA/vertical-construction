@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_stock_picking_delivery_form">
+            <field name="name">stock.picking.delivery.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <data>
+
+                    <xpath expr="//form[@string='Delivery Orders']/group/group/field[@name='backorder_id']" position="after">
+                        <field name="user_id" invisible="True"/>
+                    </xpath>
+
+                    <xpath expr="//notebook/page[@string='Products']" position="after">
+                        <page string="Assignment">
+                            <field name="user_ids" nolabel="1" on_change="on_change_user_ids(user_ids)"/>
+                        </page>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_stock_picking_delivery_tree">
+            <field name="name">stock.picking.delivery.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <field name="user_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_stock_picking_delivery_calendar">
+            <field name="name">stock.picking.delivery.calendar</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.stock_picking_calendar"/>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//calendar[@string='Calendar View']" position="replace">
+		        <calendar string="Calendar View" date_start="min_date" date_stop="max_date" color="user_id">
+                            <field name="origin"/>
+                            <field name="address_id"/>
+                        </calendar>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
