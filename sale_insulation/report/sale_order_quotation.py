@@ -29,7 +29,14 @@ class quotation(report_sxw.rml_parse):
         super(quotation, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({
             'time': time,
+            'get_line_number': self.get_line_number,
         })
+        self.line_number = 1
+
+    def get_line_number(self):
+        result = self.line_number
+        self.line_number += 1
+        return result
 
 report_sxw.report_sxw('report.sale.order.quotation',
                       'sale.order',

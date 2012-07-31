@@ -148,7 +148,20 @@ class sale_order_line(osv.osv):
 
         return {'value': result, 'domain': {}, 'warning': {} }
 
-        
+    def write(self, cr, user, ids, vals, context=None):
+        sale_order_line_obj = self.pool.get('sale.order.line').browse(cr, user, ids, context=context)
+        for line in sale_order_line_obj:
+           product_obj = self.pool.get('product.product').browse(cr, user, line.product_id.id, context=context)
+           if product_obj.sprayfoam:
+               if 'rvalue' in vals and 'surface' in vals:
+                   vals['product_uos_qty'] = vals['surface'] * vals['rvalue'] / line.product_rvalue
+               else:
+                   if 'rvalue' in vals:
+                       vals['product_uos_qty'] = line.surface * vals['rvalue'] / line.product_rvalue
+                   if 'surface' in vals:
+                       vals['product_uos_qty'] = vals['surface'] * line.rvalue / line.product_rvalue
+        return super(sale_order_line, self).write(cr, user, ids, vals, context=context)
+
     def product_id_change(self,
                           cr,
                           uid,
@@ -372,7 +385,6 @@ class sale_order_line(osv.osv):
         return False
 
     def uos_change(self, cr, uid, ids, product_uos, product_uos_qty=0, product_id=None):
-        print "Hi uos_change()"
         product_obj = self.pool.get('product.product')
         if not product_id:
             return {'value': {'product_uom': product_uos,
