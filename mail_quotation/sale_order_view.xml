@@ -2,8 +2,8 @@
 <openerp>
     <data>
 
-        <record id="view_sale_order_insulation" model="ir.ui.view">
-	    <field name="name">sale.order.form.insulation</field>
+        <record id="view_sale_order" model="ir.ui.view">
+	    <field name="name">sale.order.form.mail_quotation</field>
 	    <field name="model">sale.order</field>
 	    <field name="inherit_id" ref="sale.view_order_form"/>
 	    <field name="type">form</field>

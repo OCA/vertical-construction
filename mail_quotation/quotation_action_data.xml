@@ -25,7 +25,7 @@
             <field name="subject">${object.company_id.name} Quotation (Ref ${object.name or 'n/a' })</field>
             <field name="email_to">${object.partner_invoice_id.email}</field>
             <field name="model_id" ref="sale.model_sale_order"/>
-            <field name="report_template" ref="sale_insulation.report_sale_order_quotation"/>
+            <field name="report_template" ref="sale.report_sale_order"/>
             <field name="report_name">${object.name or 'Quotation'}</field>
             <field name="auto_delete" eval="True"/>
             <field name="lang">${object.partner_id.lang}</field>
