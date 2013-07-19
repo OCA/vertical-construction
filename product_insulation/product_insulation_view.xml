@@ -10,7 +10,7 @@
             <field name="arch" type="xml">
 	      
 	      <field name="uos_id" position="replace">
-		<field name="uos_id" attrs="{'required':[('insulation', '!=', False)]}"/>
+		  <field name="uos_id" attrs="{'required':[('insulation', '!=', False)]}"/>
 	      </field>
 
 		<page string="Information">
