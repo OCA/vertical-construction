@@ -111,6 +111,7 @@ class sale_order_line(osv.osv):
         'rvalue': fields.float('R-Value', change_default=True),
         'surface' : fields.float('Surface (sq ft)', change_default=True),
         'price_subtotal': fields.function(_amount_line, string='Subtotal', digits_compute= dp.get_precision('Sale Price')),
+
     }
 
     _defaults = {
@@ -122,7 +123,7 @@ class sale_order_line(osv.osv):
         }
 
     def create(self, cr, uid, vals, context=None):
-        if vals['product_sprayfoam']:   
+        if vals['product_sprayfoam']:
             try:
                 vals.update({
                     'product_uos_qty': vals['surface'] * vals['rvalue'] / vals['product_rvalue']
@@ -130,7 +131,7 @@ class sale_order_line(osv.osv):
             except ZeroDivisionError:
                 pass
         else:
-            if vals['product_insulation']:   
+            if vals['product_insulation']:
                 vals.update({
                     'surface': vals['product_uos_qty']
                 })
@@ -372,6 +373,7 @@ class sale_order_line(osv.osv):
                 'uos_id': uos_id,
                 'product_id': line.product_id.id or False,
                 'invoice_line_tax_id': [(6, 0, [x.id for x in line.tax_id])],
+                'note': line.notes,
                 'account_analytic_id': line.order_id.project_id and line.order_id.project_id.id or False,
                 'rvalue': line.rvalue,
                 'surface': line.surface,

@@ -44,9 +44,9 @@
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//calendar[@string='Calendar View']" position="replace">
-		        	<calendar string="Calendar View" date_start="min_date" date_stop="max_date" color="user_id">
+		        <calendar string="Calendar View" date_start="min_date" date_stop="max_date" color="user_id">
                             <field name="origin"/>
-                           <field name="address_id"/> 
+                            <field name="address_id"/>
                         </calendar>
                     </xpath>
                 </data>
