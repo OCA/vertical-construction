@@ -367,10 +367,6 @@ class sale_order_line(osv.osv):
                 'uos_id': uos_id,
                 'product_id': line.product_id.id or False,
                 'invoice_line_tax_id': [(6, 0, [x.id for x in line.tax_id])],
-<<<<<<< TREE
-=======
-                #'note': line.notes, Note fields are not available in 7.0
->>>>>>> MERGE-SOURCE
                 'account_analytic_id': line.order_id.project_id and line.order_id.project_id.id or False,
                 'rvalue': line.rvalue,
                 'surface': line.surface,
