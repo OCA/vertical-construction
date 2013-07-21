@@ -21,7 +21,7 @@
 
 {
     "name" : "Stock Picking Delivery Users",
-    "version" : "0.1",
+    "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
