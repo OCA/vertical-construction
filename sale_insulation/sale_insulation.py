@@ -26,7 +26,6 @@ import netsvc
 from tools.translate import _
 
 class sale_order(osv.osv):
-    _name = 'sale.order'
     _inherit = 'sale.order'
 
     def _amount_line_tax(self, cr, uid, line, context=None):
@@ -65,12 +64,10 @@ class sale_order(osv.osv):
         res['surface'] = line.surface
         return res
 
-
 sale_order()
 
 
 class sale_order_line(osv.osv):
-    _name = 'sale.order.line'
     _inherit = 'sale.order.line'
 
     def _amount_line(self, cr, uid, ids, field_name, arg, context=None):
@@ -123,7 +120,7 @@ class sale_order_line(osv.osv):
         }
 
     def create(self, cr, uid, vals, context=None):
-        if vals['product_sprayfoam']:
+        if 'product_sprayfoam' in vals:
             try:
                 vals.update({
                     'product_uos_qty': vals['surface'] * vals['rvalue'] / vals['product_rvalue']
@@ -131,7 +128,7 @@ class sale_order_line(osv.osv):
             except ZeroDivisionError:
                 pass
         else:
-            if vals['product_insulation']:
+            if 'product_insulation' in vals:
                 vals.update({
                     'surface': vals['product_uos_qty']
                 })
@@ -322,8 +319,7 @@ class sale_order_line(osv.osv):
                 if line.product_uos:
                     return line.product_uos_qty or 0.0
                 return line.product_uom_qty
-            else:
-                return self.pool.get('procurement.order').quantity_get(cr, uid,
+            return self.pool.get('procurement.order').quantity_get(cr, uid,
                         line.procurement_id.id, context=context)
 
         def _get_line_uom(line):
@@ -371,6 +367,10 @@ class sale_order_line(osv.osv):
                 'uos_id': uos_id,
                 'product_id': line.product_id.id or False,
                 'invoice_line_tax_id': [(6, 0, [x.id for x in line.tax_id])],
+<<<<<<< TREE
+=======
+                #'note': line.notes, Note fields are not available in 7.0
+>>>>>>> MERGE-SOURCE
                 'account_analytic_id': line.order_id.project_id and line.order_id.project_id.id or False,
                 'rvalue': line.rvalue,
                 'surface': line.surface,

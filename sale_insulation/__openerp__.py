@@ -21,7 +21,7 @@
 
 {
     "name" : "Sale Insulation",
-    "version" : "0.1",
+    "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
@@ -31,7 +31,7 @@ This module allows you  to generate sale orders that calculates the right price
 for insulation products.
     """,
     "depends" : [
-        "sale", 
+        "sale_stock", 
         "product_insulation",
         "procurement_insulation",
         "stock_picking_delivery_insulation",

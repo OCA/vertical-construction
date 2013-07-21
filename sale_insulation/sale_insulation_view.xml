@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-      <record id="view_sale_order_insulation" model="ir.ui.view">
-	<field name="name">sale.order.form.insulation</field>
-	<field name="model">sale.order</field>
-	<field name="inherit_id" ref="sale.view_order_form"/>
-	<field name="arch" type="xml">
-	  <data>
 
-	    <xpath
-                expr="//field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='product_uos_qty']"
-                position="before">
-		<field name="surface"/>
-		<field name="rvalue"/>
-	    </xpath>	      
+        <record id="view_sale_order_insulation" model="ir.ui.view">
+	    <field name="name">sale.order.form.insulation</field>
+	    <field name="model">sale.order</field>
+	    <field name="inherit_id" ref="sale.view_order_form"/>
+	    <field name="arch" type="xml">
+	        <data>
 
-	    <field name="product_uos_qty" position="replace">
-	      	<field groups="product.group_uos" name="product_uos_qty" attrs="{'readonly':[('product_sprayfoam', '==', True)]}" on_change="uos_change(product_uos, product_uos_qty, product_id)"/>
+	            <xpath
+                        expr="//field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='product_uos_qty']"
+                        position="before">
+		        <field name="surface"/>
+                        <field name="rvalue"/>
+                    </xpath>	      
+
+	            <field name="product_uos_qty" position="replace">
+	      	        <field groups="product.group_uos" name="product_uos_qty" attrs="{'readonly':[('product_sprayfoam', '==', True)]}" on_change="uos_change(product_uos, product_uos_qty, product_id)"/>
+	            </field>
+
+	            <field name="product_uos" position="replace">
+	      	        <field groups="product.group_uos" name="product_uos" nolabel="1" on_change="uos_change(product_uos, product_uos_qty, product_id)"/>
+	            </field>
+
+                    <xpath
+                        expr="//field[@name='order_line']/form/group/group/field[@name='product_id']"
+                        position="after">
+	      	        <field name="product_rvalue" invisible="True"/>
+              	        <field name="product_insulation" invisible="True"/>
+              	        <field name="product_sprayfoam" invisible="True" />
+              	        <label for="surface" attrs="{'invisible':[('product_insulation', '=', False)]}"/>
+		        <div>
+      			    <field name="surface" on_change="surface_or_rvalue_change(surface, rvalue, product_rvalue, product_id, context)" attrs="{'invisible':[('product_sprayfoam', '=', False)]}" class="oe_inline"/>
+		        </div>
+              	        <label for="rvalue" attrs="{'invisible':[('product_insulation', '=', False)]}"/>
+		        <div>
+              		    <field name="rvalue" on_change="surface_or_rvalue_change(surface, rvalue, product_rvalue, product_id, context)" attrs="{'invisible':[('product_insulation', '=', False)]}" class="oe_inline"/>
+		        </div>
+	            </xpath>
+
+	            <xpath
+		        expr="//form/header/button[@string='Print']"
+		        position="attributes">
+	                <attribute name="name">%(report_sale_order_quotation)d</attribute>
+	                <attribute name="type">action</attribute>
+	            </xpath>
+
+	        </data>
 	    </field>
-
-	    <field name="product_uos" position="replace">
-	      	<field groups="product.group_uos" name="product_uos" nolabel="1" on_change="uos_change(product_uos, product_uos_qty, product_id)"/>
-	    </field>
-
-	    <xpath
-                expr="//field[@name='order_line']/form/group/group/field[@name='product_id']"
-                position="after">
-	      	<field name="product_rvalue" invisible="True"/>
-              	<field name="product_insulation" invisible="True"/>
-              	<field name="product_sprayfoam" invisible="True" />
-              	<label for="surface" attrs="{'invisible':[('product_insulation', '=', False)]}"/>
-		<div>
-      			<field name="surface" on_change="surface_or_rvalue_change(surface, rvalue, product_rvalue, product_id, context)" attrs="{'invisible':[('product_sprayfoam', '=', False)]}" class="oe_inline"/>
-		</div>
-              	<label for="rvalue" attrs="{'invisible':[('product_insulation', '=', False)]}"/>
-		<div>
-              		<field name="rvalue" on_change="surface_or_rvalue_change(surface, rvalue, product_rvalue, product_id, context)" attrs="{'invisible':[('product_insulation', '=', False)]}" class="oe_inline"/>
-		</div>
-	    </xpath>
-
-	    <xpath
-		expr="//form/header/button[@string='Print']"
-		position="attributes">
-	      <attribute name="name">%(report_sale_order_quotation)d</attribute>
-	      <attribute name="type">action</attribute>
-	    </xpath>
-
-	  </data>
-	</field>
-      </record>
+        </record>
 
     </data>
 </openerp>
