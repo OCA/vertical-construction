@@ -218,8 +218,6 @@ class sale_order_line(osv.osv):
                     uos = False
             else:
                 uos = False
-        if product_obj.description_sale:
-            result['notes'] = product_obj.description_sale
         fpos = fiscal_position and self.pool.get('account.fiscal.position').browse(cr, uid, fiscal_position) or False
         if update_tax: #The quantity only have changed
             result['delay'] = (product_obj.sale_delay or 0.0)
@@ -373,7 +371,6 @@ class sale_order_line(osv.osv):
                 'uos_id': uos_id,
                 'product_id': line.product_id.id or False,
                 'invoice_line_tax_id': [(6, 0, [x.id for x in line.tax_id])],
-                'note': line.notes,
                 'account_analytic_id': line.order_id.project_id and line.order_id.project_id.id or False,
                 'rvalue': line.rvalue,
                 'surface': line.surface,

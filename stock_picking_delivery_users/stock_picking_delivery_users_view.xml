@@ -6,7 +6,6 @@
             <field name="name">stock.picking.delivery.form</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_out_form"/>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
 
@@ -28,7 +27,6 @@
             <field name="name">stock.picking.delivery.tree</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_out_tree"/>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <field name="state" position="before">
                     <field name="user_id"/>
@@ -40,13 +38,12 @@
             <field name="name">stock.picking.delivery.calendar</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.stock_picking_calendar"/>
-            <field name="type">calendar</field>
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//calendar[@string='Calendar View']" position="replace">
 		        <calendar string="Calendar View" date_start="min_date" date_stop="max_date" color="user_id">
                             <field name="origin"/>
-                            <field name="address_id"/>
+                            <field name="partner_id"/>
                         </calendar>
                     </xpath>
                 </data>
