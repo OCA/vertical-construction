@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,18 +15,19 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 from osv import fields, osv
 
+
 class product_product_insulation(osv.osv):
     _inherit = 'product.product'
     _columns = {
-        'insulation' : fields.boolean('Insulation product', change_default=True),
-        'rvalue' : fields.integer('R-Value',help="Thermal resistance"),
-        'sprayfoam' : fields.boolean('SPF', help="SPray Foam product uses square foot and R-value to compute the board foot. Choose board foot as the UoS"),
+        'insulation': fields.boolean('Insulation product', change_default=True),
+        'rvalue': fields.integer('R-Value', help="Thermal resistance"),
+        'sprayfoam': fields.boolean('SPF', help="SPray Foam product uses square foot and R-value to compute the board foot. Choose board foot as the UoS"),
     }
 
 product_product_insulation()

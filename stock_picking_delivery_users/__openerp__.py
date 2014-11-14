@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,25 +15,25 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    "name" : "Stock Picking Delivery Users",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Stock",
-    "description" : """ 
-This module allows you to assign different users to a delivery order and display 
+    "name": "Stock Picking Delivery Users",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Stock",
+    "description" : """
+This module allows you to assign different users to a delivery order and display
 the calendar per user.
     """,
-    "images" : [],
-    "depends" : ["stock"],
-    "demo" : [],
-    "test" : [],
+    "images": [],
+    "depends": ["stock"],
+    "demo": [],
+    "test": [],
     "data": [
         "stock_picking_delivery_users_view.xml",
     ],

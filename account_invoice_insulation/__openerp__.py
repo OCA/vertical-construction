@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,31 +15,31 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    "name" : "Invoice Insulation",
-    "version" : "0.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Accounting",
+    "name": "Invoice Insulation",
+    "version": "0.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Accounting",
     "description" : """
 This module allows you to generate invoices with thermal resistance for insulation products.
     """,
-    "depends" : [
-	"account",
-	"product_insulation",
-	],
-    "images" : [],
-    "test" : [],
-    "demo" : [],
-    "data" : [
-	"report/account_invoice_insulation_report.xml",
-	"account_invoice_insulation_view.xml",
-	],
+    "depends": [
+        "account",
+        "product_insulation",
+    ],
+    "images": [],
+    "test": [],
+    "demo": [],
+    "data": [
+        "report/account_invoice_insulation_report.xml",
+        "account_invoice_insulation_view.xml",
+    ],
     "installable": True,
     "complexity": "easy",
 }

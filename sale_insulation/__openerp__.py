@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,35 +15,35 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    "name" : "Sale Insulation",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Sales Management",
+    "name": "Sale Insulation",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Sales Management",
     "description" : """
-This module allows you  to generate sale orders that calculates the right price 
+This module allows you  to generate sale orders that calculates the right price
 for insulation products.
     """,
-    "depends" : [
-        "sale_stock", 
+    "depends": [
+        "sale_stock",
         "product_insulation",
         "procurement_insulation",
         "stock_picking_delivery_insulation",
         "account_invoice_insulation",
     ],
-    "images" : [],
-    "test" : [],
-    "demo" : [],
-    "data" : [
-	"report/sale_insulation_report.xml",
-	"sale_insulation_view.xml",
-	],
+    "images": [],
+    "test": [],
+    "demo": [],
+    "data": [
+        "report/sale_insulation_report.xml",
+        "sale_insulation_view.xml",
+    ],
     "installable": True,
     "complexity": "normal",
 }
