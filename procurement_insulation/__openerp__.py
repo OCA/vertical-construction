@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,27 +15,27 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    "name" : "Procurement Insulation",
-    "version" : "0.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Procurement",
+    "name": "Procurement Insulation",
+    "version": "0.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Procurement",
     "description" : """
     This module allows one to generate sale orders that calculates the right price for insulation products.
     """,
-    "depends" : ["procurement"],
-    "images" : [],
-    "test" : [],
-    "demo" : [],
-    "data" : [
-	"procurement_insulation_view.xml",
-	],
+    "depends": ["procurement"],
+    "images": [],
+    "test": [],
+    "demo": [],
+    "data": [
+        "procurement_insulation_view.xml",
+    ],
     "installable": True,
     "complexity": "easy",
 }

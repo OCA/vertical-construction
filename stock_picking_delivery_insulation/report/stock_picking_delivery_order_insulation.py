@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,14 +15,16 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 
 from report import report_sxw
 
+
 class delivery_order(report_sxw.rml_parse):
+
     def __init__(self, cr, uid, name, context=None):
         super(delivery_order, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({
@@ -31,18 +33,18 @@ class delivery_order(report_sxw.rml_parse):
             'get_address': self.get_address,
         })
         self.line_number = 1
-        
+
     def delivery_men(self, men):
         """
         Return the list of delivery men pre-formatted for the report.
         """
         return "\n".join(man.name for man in men)
-    
+
     def get_line_number(self):
         result = self.line_number
         self.line_number += 1
         return result
-    
+
     def get_address(self, partner_id):
         result = u""
         if partner_id:
@@ -55,7 +57,7 @@ class delivery_order(report_sxw.rml_parse):
                 result += (address.street2 or u"") + "\n"
                 result += address.city + u" " if address.city else u""
                 result += u"(" + address.state_id.name.upper() + u")" \
-                        if address.state_id and address.state_id.name else u""
+                    if address.state_id and address.state_id.name else u""
                 result += u"\n"
                 result += address.zip if address.zip else u""
         return result

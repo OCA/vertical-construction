@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,29 +15,29 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
-    "name" : "Stock Picking Delivery Order Insulation",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Stock",
+    "name": "Stock Picking Delivery Order Insulation",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Stock",
     "description" : """
-This module adds area and thermal resistance of insulation products to the 
+This module adds area and thermal resistance of insulation products to the
 delivery orders views and report.
     """,
-    "depends" : [
+    "depends": [
         "product_insulation",
         "stock_picking_delivery_users",
     ],
-    "demo" : [],
-    "test" : [],
-    "images" : [],
-    "data" : [
+    "demo": [],
+    "test": [],
+    "images": [],
+    "data": [
         "report/stock_picking_delivery_order_insulation.xml",
         "stock_picking_delivery_insulation_view.xml",
     ],

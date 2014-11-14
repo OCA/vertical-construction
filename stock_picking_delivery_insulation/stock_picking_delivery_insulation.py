@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,18 +15,19 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 from osv import fields, osv
+
 
 class stock_picking_delivery_lines(osv.osv):
     _inherit = 'stock.move'
     _columns = {
         'product_insulation': fields.boolean('Insulation Product'),
         'rvalue': fields.float('R-Value', change_default=True),
-        'surface' : fields.float('Surface (sq ft)', change_default=True),
+        'surface': fields.float('Surface (sq ft)', change_default=True),
     }
 
     _defaults = {
@@ -48,18 +49,20 @@ class stock_picking_delivery_lines(osv.osv):
             return {}
         lang = False
         if address_id:
-            addr_rec = self.pool.get('res.partner.address').browse(cr, uid, address_id)
+            addr_rec = self.pool.get(
+                'res.partner.address').browse(cr, uid, address_id)
             if addr_rec:
                 lang = addr_rec.partner_id and addr_rec.partner_id.lang or False
         ctx = {'lang': lang}
 
-        product = self.pool.get('product.product').browse(cr, uid, [prod_id], context=ctx)[0]
-        uos_id  = product.uos_id and product.uos_id.id or False
+        product = self.pool.get('product.product').browse(
+            cr, uid, [prod_id], context=ctx)[0]
+        uos_id = product.uos_id and product.uos_id.id or False
         result = {
             'product_uom': product.uom_id.id,
             'product_uos': uos_id,
             'product_qty': 1.00,
-            'product_uos_qty' : self.pool.get('stock.move').onchange_quantity(cr, uid, ids, prod_id, 1.00, product.uom_id.id, uos_id)['value']['product_uos_qty']
+            'product_uos_qty': self.pool.get('stock.move').onchange_quantity(cr, uid, ids, prod_id, 1.00, product.uom_id.id, uos_id)['value']['product_uos_qty']
         }
         if not ids:
             result['name'] = product.partner_ref
