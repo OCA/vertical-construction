@@ -12,7 +12,7 @@
             </field>
         </record>
         <record model="ir.ui.view" id="construction_architect_base_search">
-            <field name="name">construction.architect.base.form</field>
+            <field name="name">construction.architect.base.search</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="arch" type="xml">
