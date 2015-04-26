@@ -2,6 +2,7 @@
 <openerp>
     <data>
 
+        <!-- Product form view -->
         <record model="ir.ui.view" id="view_product_form_insulation">
             <field name="name">product.insulation.form</field>
             <field name="model">product.product</field>
@@ -18,6 +19,7 @@
             </field>
         </record>
 
+        <!-- Product tree view -->
         <record id="product_product_tree_view_insulation" model="ir.ui.view">
             <field name="name">product.insulation.tree</field>
             <field name="model">product.product</field>
@@ -29,6 +31,8 @@
                 </xpath>
             </field>
         </record>
+
+        <!-- TODO: product search view -->
 
     </data>
 </openerp>
