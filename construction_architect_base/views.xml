@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="construction_architect_base_form">
+            <field name="name">construction.architect.base.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="isArchitect" string="Architect"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="construction_architect_base_search">
+            <field name="name">construction.architect.base.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='supplier']" position="after">
+                    <filter string="Architects" name="type_architect" domain="[('isArchitect','=','1')]"/>
+                </xpath>
+            </field>
+         </record>
+    </data>
+</openerp>
