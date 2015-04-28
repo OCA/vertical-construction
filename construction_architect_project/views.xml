@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Project form view -->
+        <record model="ir.ui.view" id="construction_architect_project_form">
+            <field name="name">construction.architect.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="architect"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Project tree view -->
+        <record model="ir.ui.view" id="construction_architect_project_tree">
+            <field name="name">construction.architect.project.tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="architect"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Project search view -->
+        <record model="ir.ui.view" id="construction_architect_project_search">
+            <field name="name">construction.architect.project.search</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Contact']" position="after">
+                    <filter string="Architect" context="{'group_by':'architect'}"/>
+                </xpath>
+            </field>
+         </record>
+    </data>
+</openerp>
