@@ -1,3 +1,0 @@
-# List the OCA project dependencies, one per line
-
-construction_architect_base https://github.com/OCA/vertical-construction

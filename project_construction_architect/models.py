@@ -2,6 +2,7 @@
 
 from openerp import models, fields
 
+
 class Project(models.Model):
     _name = 'project.project'
     _inherit = 'project.project'
