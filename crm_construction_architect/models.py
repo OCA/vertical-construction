@@ -2,6 +2,7 @@
 
 from openerp import models, fields
 
+
 class Lead(models.Model):
     _name = 'crm.lead'
     _inherit = 'crm.lead'
