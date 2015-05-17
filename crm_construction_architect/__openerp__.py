@@ -25,7 +25,7 @@
             - Identify the architect of a lead/opportunity.
             - Filter/group/search opportunities by architect.
     """,
-    'author': "Mathias Colpaert",
+    'author': "Mathias Colpaert, OCA",
     'category': "construction",
     'version': '0.1',
     'depends': ['crm', 'base_construction_architect'],
