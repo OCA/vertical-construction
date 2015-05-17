@@ -18,16 +18,16 @@
 #
 ##############################################################################
 {
-    'name': "OCA Construction: Architect Base",
-    'summary': "Identify partners as architects.",
+    'name': "OCA Construction: Project Architect",
+    'summary': """Indicate the architect of a project.""",
     'description': """
         This module allows you to:
-            - Identify a partner as an architect.
-            - Filter architects from address book.
+            - Identify the architect of a project.
+            - Filter/group/search projects by architect.
     """,
-    'author': "Mathias Colpaert, Odoo Community Association (OCA)",
+    'author': "Mathias Colpaert,Odoo Community Association (OCA)",
     'category': "construction",
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['project', 'base_construction_architect'],
     'data': ['views.xml'],
 }
