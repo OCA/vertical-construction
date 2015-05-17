@@ -1,17 +1,10 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Construction Architect CRM
+CRM Construction Architect
 ===========
 
 This module allows you to assign an architect to a lead or opportunity.
-
-Installation
-============
-
-To install this module, you need to:
-
-* have construction_architect_base available
 
 Credits
 =======
