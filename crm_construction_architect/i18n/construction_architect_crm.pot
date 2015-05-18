@@ -1,0 +1,29 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* construction_architect_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-28 17:40+0000\n"
+"PO-Revision-Date: 2015-04-28 17:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: construction_architect_crm
+#: view:crm.lead:construction_architect_crm.construction_architect_sale_lead_search
+#: view:crm.lead:construction_architect_crm.construction_architect_sale_search
+#: field:crm.lead,architect:0
+msgid "Architect"
+msgstr ""
+
+#. module: construction_architect_crm
+#: model:ir.model,name:construction_architect_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
