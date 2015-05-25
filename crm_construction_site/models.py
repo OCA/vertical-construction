@@ -9,7 +9,9 @@ class Lead(models.Model):
 
     site = fields.Many2one('res.partner')
 
-    @api.onchange('partner_id')
-    def _change_site_when_empty(self):
-        if self.partner_id:
-            self.site = self.partner_id.id
+    @api.multi
+    def on_change_partner_id(self, partner_id):
+        res = super(Lead, self).on_change_partner_id(partner_id)
+        if partner_id:
+            res['value'].update({'site': partner_id})
+        return res

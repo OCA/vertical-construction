@@ -1,8 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-CRM Construction Site
-===========
+CRM Construction Site Address
+============================
 
 This module allows you to assign a construction site to a lead or opportunity.
 

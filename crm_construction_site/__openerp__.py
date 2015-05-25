@@ -19,12 +19,7 @@
 ##############################################################################
 {
     'name': "OCA Construction: Construction site address.",
-    'summary': """Indicate the construction site address of a lead/opportunity.""",
-    'description': """
-        This module allows you to:
-            - Identify the construction site address.
-            - Note that customer address != construction site address
-    """,
+    'summary': """Construction site address of a lead/opportunity.""",
     'author': "Mathias Colpaert, Odoo Community Association (OCA)",
     'category': "construction",
     'version': '0.1',
