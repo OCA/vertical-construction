@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_construction_site
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-25 08:41+0000\n"
+"PO-Revision-Date: 2015-05-25 08:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_construction_site
+#: model:ir.model,name:crm_construction_site.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/opportuniteit"
+
+#. module: crm_construction_site
+#: field:crm.lead,site:0
+msgid "Site"
+msgstr "Site"
+
+#. module: crm_construction_site
+#: view:crm.lead:crm_construction_site.construction_site_sale_form
+#: view:crm.lead:crm_construction_site.construction_site_sale_lead_form
+msgid "Site Address"
+msgstr "Site Address"
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Lead form view -->
+        <record model="ir.ui.view" id="construction_site_sale_lead_form">
+            <field name="name">construction.site.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="site" string="Site Address"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Opportunity form view -->
+        <record model="ir.ui.view" id="construction_site_sale_form">
+            <field name="name">construction.site.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="site" string="Site Address"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
