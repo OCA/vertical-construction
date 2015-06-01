@@ -25,4 +25,5 @@
     'version': '0.1',
     'depends': ['crm'],
     'data': ['views.xml'],
+    'demo': ['demo.xml']
 }
