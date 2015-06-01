@@ -89,7 +89,7 @@
                 </xpath>
 
                 <xpath expr="//filter[@string='Source']" position="after">
-                    <filter string="Calculator Actie" context="{'group_by':'calculator_next_action'}"/>
+                    <filter string="Calculator Action" context="{'group_by':'calculator_next_action'}"/>
                 </xpath>
 
                 <xpath expr="//filter[@name='assigned_to_me']" position="replace">

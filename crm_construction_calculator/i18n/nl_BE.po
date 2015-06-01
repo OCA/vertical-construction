@@ -24,7 +24,7 @@ msgstr "Calculator"
 
 #. module: crm_construction_calculator
 #: view:crm.lead:crm_construction_calculator.construction_architect_sale_search
-msgid "Calculator Actie"
+msgid "Calculator Action"
 msgstr "Calculator Actie"
 
 #. module: crm_construction_calculator
