@@ -20,7 +20,7 @@
 {
     'name': "OCA Construction: calculator role",
     'summary': """Assign a calculator to a lead/opportunity.""",
-    'author': "Mathias Colpaert",
+    'author': "Mathias Colpaert, Odoo Community Association (OCA)",
     'category': "construction",
     'version': '0.1',
     'depends': ['crm'],
