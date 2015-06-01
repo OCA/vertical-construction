@@ -2,7 +2,7 @@
     :alt: License: AGPL-3
 
 Construction Calculator CRM
-===========
+===========================
 
 This module allows you to:
     - Identify the calculator of a lead/opportunity.
