@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/OCA/vertical-construction.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-construction)
 [![Coverage Status](https://coveralls.io/repos/OCA/vertical-construction/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-construction?branch=8.0)
+[![Code Climate](https://codeclimate.com/github/OCA/vertical-construction/badges/gpa.svg)](https://codeclimate.com/github/OCA/vertical-construction)
 # OCA vertical-construction
 This repository groups all OCA modules for construction companies.
 
