@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_construction_calculator
+#
+msgid ""
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_form
+msgid "Action"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: field:crm.lead,calculation_hours:0
+msgid "Calculation hours"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_search
+#: view:crm.lead:crm_construction_calculator.construction_calculator_sale_lead_search
+#: field:crm.lead,calculator:0
+msgid "Calculator"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_search
+msgid "Calculator Action"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.lead_calculator_gantt_view
+#: model:ir.ui.menu,name:crm_construction_calculator.menu_calculator_planning
+msgid "Calculator Planning"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: field:crm.lead,calculator_next_action:0
+msgid "Calculator next action"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: field:crm.lead,calculator_start_date:0
+msgid "Calculator start date"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_form
+msgid "Date"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_form
+msgid "Hours"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: model:ir.model,name:crm_construction_calculator.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_search
+msgid "My Opportunities"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: view:crm.lead:crm_construction_calculator.construction_architect_sale_search
+msgid "Opportunities that are assigned to me"
+msgstr ""
+
+#. module: crm_construction_calculator
+#: model:ir.actions.act_window,name:crm_construction_calculator.lead_gantt_list_action
+msgid "Planning"
+msgstr ""
+

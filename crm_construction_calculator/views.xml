@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Lead form view -->
+        <record model="ir.ui.view" id="construction_calculator_sale_lead_form">
+            <field name="name">construction.calculator.sale.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="calculator"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Lead search view -->
+        <record model="ir.ui.view" id="construction_calculator_sale_lead_search">
+            <field name="name">construction.calculator.sale.lead.search</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Source']" position="after">
+                    <filter string="Calculator" context="{'group_by':'calculator'}"/>
+                </xpath>
+            </field>
+         </record>
+
+        <!-- Opportunity form view -->
+        <record model="ir.ui.view" id="construction_architect_sale_form">
+            <field name="name">construction.calculator.sale.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="calculator"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page String="Calculator Planning">
+                        <group>
+                            <field string="Action" name="calculator_next_action"/>
+                            <field string="Date" name="calculator_start_date"/>
+                            <field string="Hours" name="calculation_hours"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Opportunity tree view -->
+        <record model="ir.ui.view" id="construction_architect_sale_tree">
+            <field name="name">construction.calculator.sale.tree</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="calculator"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Opportunity Gantt View -->
+        <record model="ir.ui.view" id="lead_calculator_gantt_view">
+            <field name="name">lead.gantt</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <gantt string="Calculator Planning" create="false"
+                       date_start="calculator_start_date" date_delay="calculation_hours"
+                       default_group_by='calculator'/>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="lead_gantt_list_action">
+            <field name="name">Planning</field>
+            <field name="res_model">crm.lead</field>
+            <field name="domain">[('type','=','opportunity')]</field>
+            <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="view_mode">gantt</field>
+        </record>
+
+        <!-- Opportunity search view -->
+        <record model="ir.ui.view" id="construction_architect_sale_search">
+            <field name="name">construction.architect.sale.search</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Source']" position="after">
+                    <filter string="Calculator" context="{'group_by':'calculator'}"/>
+                </xpath>
+
+                <xpath expr="//filter[@string='Source']" position="after">
+                    <filter string="Calculator Action" context="{'group_by':'calculator_next_action'}"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='assigned_to_me']" position="replace">
+                    <filter string="My Opportunities" name="assigned_to_me"
+                            domain="['|', ('user_id', '=', uid), ('calculator', '=', uid)]"
+                            help="Opportunities that are assigned to me"/>
+                </xpath>
+            </field>
+         </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_calculator_planning" name="Calculator Planning" parent="base.menu_sales" action="lead_gantt_list_action"/>
+
+    </data>
+</openerp>

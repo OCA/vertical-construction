@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Demo Users -->
+        <record id="res_partner_test_1" model="res.partner">
+            <field name="name">Peter Mitchell</field>
+        </record>
+
+        <record id="res_user_test_1" model="res.users">
+            <field name="login">Peter Mitchell</field>
+            <field name="partner_id" ref="res_partner_test_1"/>
+        </record>
+
+        <!-- Demo Opportunities -->
+        <record id="crm.crm_case_13" model="crm.lead">
+            <field eval="time.strftime('%Y-%m-%d')" name="calculator_start_date"/>
+            <field name="calculation_hours">5</field>
+            <field name="calculator" ref="base.user_demo"/>
+            <field name="calculator_next_action">First offer</field>
+        </record>
+
+        <record id="crm.crm_case_14" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=5)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">3</field>
+            <field name="calculator_next_action">First offer</field>
+        </record>
+
+        <record id="crm.crm_case_15" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=10)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">7</field>
+            <field name="calculator_next_action">Second offer</field>
+        </record>
+
+        <record id="crm.crm_case_16" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=15)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">3</field>
+            <field name="calculator_next_action">After sale</field>
+        </record>
+
+        <record id="crm.crm_case_17" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=25)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">4</field>
+            <field name="calculator_next_action">First offer</field>
+        </record>
+
+        <record id="crm.crm_case_18" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=30)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">5</field>
+            <field name="calculator_next_action">First offer</field>
+        </record>
+
+        <record id="crm.crm_case_19" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=35)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">5</field>
+        </record>
+
+        <record id="crm.crm_case_20" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=40)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">10</field>
+        </record>
+
+        <record id="crm.crm_case_21" model="crm.lead">
+            <field name="calculator" ref="res_user_test_1"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=45)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">2</field>
+        </record>
+
+        <record id="crm.crm_case_22" model="crm.lead">
+            <field name="calculator" ref="base.user_demo"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=1)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">5</field>
+        </record>
+
+        <record id="crm.crm_case_23" model="crm.lead">
+            <field name="calculator" ref="base.user_demo"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=5)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">15</field>
+        </record>
+
+        <record id="crm.crm_case_24" model="crm.lead">
+            <field name="calculator" ref="base.user_demo"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=15)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">3</field>
+        </record>
+
+        <record id="crm.crm_case_25" model="crm.lead">
+            <field name="calculator" ref="base.user_demo"/>
+            <field name="calculator_start_date" eval="(DateTime.today() - relativedelta(hours=30)).strftime('%Y-%m-%d')"/>
+            <field name="calculation_hours">4</field>
+        </record>
+    </data>
+</openerp>
