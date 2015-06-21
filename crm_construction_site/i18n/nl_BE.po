@@ -1,0 +1,18 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_construction_site
+#
+msgid ""
+msgstr ""
+
+#. module: crm_construction_site
+#: field:crm.lead,site:0
+msgid "Site"
+msgstr "Werf"
+
+#. module: crm_construction_site
+#: view:crm.lead:crm_construction_site.construction_site_sale_form
+#: view:crm.lead:crm_construction_site.construction_site_sale_lead_form
+msgid "Site Address"
+msgstr "Werf Adres"
+
