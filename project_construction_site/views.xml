@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Project form view -->
+        <record model="ir.ui.view" id="construction_site_project_form">
+            <field name="name">construction.site.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_start']" position="before">
+                    <field name="site"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

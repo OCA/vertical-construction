@@ -1,0 +1,12 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_construction_site
+#
+msgid ""
+msgstr ""
+
+#. module: project_construction_site
+#: field:project.project,site:0
+msgid "Site"
+msgstr ""
+
