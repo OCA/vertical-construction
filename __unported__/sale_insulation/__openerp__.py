@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,7 +15,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -27,11 +27,11 @@
     "license" : "AGPL-3",
     "category" : "Sales Management",
     "description" : """
-This module allows you  to generate sale orders that calculates the right price 
+This module allows you  to generate sale orders that calculates the right price
 for insulation products.
     """,
     "depends" : [
-        "sale_stock", 
+        "sale_stock",
         "product_insulation",
         "procurement_insulation",
         "stock_picking_delivery_insulation",
@@ -44,6 +44,6 @@ for insulation products.
 	"report/sale_insulation_report.xml",
 	"sale_insulation_view.xml",
 	],
-    "installable": True,
+    "installable": False,
     "complexity": "normal",
 }
