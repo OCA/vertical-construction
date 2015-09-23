@@ -14,6 +14,31 @@ These modules introduce the concept of an architect of a construction project.
 - An opportunity/lead can have a architect related to it.
 - Projects can have a an architect related to it.
 
+[//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[base_construction_architect](base_construction_architect/) | 0.1 | Identify partners as architects.
+[crm_construction_architect](crm_construction_architect/) | 0.1 | Indicate the architect of a lead/opportunity.
+[crm_construction_calculator](crm_construction_calculator/) | 0.1 | Assign a calculator to a lead/opportunity.
+[crm_construction_site](crm_construction_site/) | 0.1 | Construction site address of a lead/opportunity.
+[project_construction_architect](project_construction_architect/) | 0.1 | Indicate the architect of a project.
+[project_construction_site](project_construction_site/) | 0.1 | Construction site address of a project.
+
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[account_invoice_insulation](__unported__/account_invoice_insulation/) | 0.1 (unported) | Invoice Insulation
+[construction_insulation](__unported__/construction_insulation/) | 0.1 (unported) | Insulation
+[procurement_insulation](__unported__/procurement_insulation/) | 0.1 (unported) | Procurement Insulation
+[sale_insulation](__unported__/sale_insulation/) | 1.0 (unported) | Sale Insulation
+[stock_picking_delivery_insulation](__unported__/stock_picking_delivery_insulation/) | 1.0 (unported) | Stock Picking Delivery Order Insulation
+[stock_picking_delivery_users](__unported__/stock_picking_delivery_users/) | 1.0 (unported) | Stock Picking Delivery Users
+
+[//]: # (end addons)
+
 ----
 
 OCA, or the Odoo Community Association, is a nonprofit organization whose
