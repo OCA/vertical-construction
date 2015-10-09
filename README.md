@@ -19,12 +19,12 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[base_construction_architect](base_construction_architect/) | 0.1 | Identify partners as architects.
-[crm_construction_architect](crm_construction_architect/) | 0.1 | Indicate the architect of a lead/opportunity.
-[crm_construction_calculator](crm_construction_calculator/) | 0.1 | Assign a calculator to a lead/opportunity.
-[crm_construction_site](crm_construction_site/) | 0.1 | Construction site address of a lead/opportunity.
-[project_construction_architect](project_construction_architect/) | 0.1 | Indicate the architect of a project.
-[project_construction_site](project_construction_site/) | 0.1 | Construction site address of a project.
+[base_construction_architect](base_construction_architect/) | 8.0.0.1.0 | Identify partners as architects.
+[crm_construction_architect](crm_construction_architect/) | 8.0.0.1.0 | Indicate the architect of a lead/opportunity.
+[crm_construction_calculator](crm_construction_calculator/) | 8.0.0.1.0 | Assign a calculator to a lead/opportunity.
+[crm_construction_site](crm_construction_site/) | 8.0.0.1.0 | Construction site address of a lead/opportunity.
+[project_construction_architect](project_construction_architect/) | 8.0.0.1.0 | Indicate the architect of a project.
+[project_construction_site](project_construction_site/) | 8.0.0.1.0 | Construction site address of a project.
 
 Unported addons
 ---------------
