@@ -30,12 +30,12 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[account_invoice_insulation](__unported__/account_invoice_insulation/) | 0.1 (unported) | Invoice Insulation
-[construction_insulation](__unported__/construction_insulation/) | 0.1 (unported) | Insulation
-[procurement_insulation](__unported__/procurement_insulation/) | 0.1 (unported) | Procurement Insulation
-[sale_insulation](__unported__/sale_insulation/) | 1.0 (unported) | Sale Insulation
-[stock_picking_delivery_insulation](__unported__/stock_picking_delivery_insulation/) | 1.0 (unported) | Stock Picking Delivery Order Insulation
-[stock_picking_delivery_users](__unported__/stock_picking_delivery_users/) | 1.0 (unported) | Stock Picking Delivery Users
+[account_invoice_insulation](account_invoice_insulation/) | 0.1 (unported) | Invoice Insulation
+[construction_insulation](construction_insulation/) | 0.1 (unported) | Insulation
+[procurement_insulation](procurement_insulation/) | 0.1 (unported) | Procurement Insulation
+[sale_insulation](sale_insulation/) | 1.0 (unported) | Sale Insulation
+[stock_picking_delivery_insulation](stock_picking_delivery_insulation/) | 1.0 (unported) | Stock Picking Delivery Order Insulation
+[stock_picking_delivery_users](stock_picking_delivery_users/) | 1.0 (unported) | Stock Picking Delivery Users
 
 [//]: # (end addons)
 
