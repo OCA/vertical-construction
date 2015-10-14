@@ -30,4 +30,5 @@
     'version': '8.0.0.1.0',
     'depends': ['crm', 'base_construction_architect'],
     'data': ['views.xml'],
+    'installable': False,
 }

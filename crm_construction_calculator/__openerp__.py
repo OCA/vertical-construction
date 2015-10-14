@@ -26,4 +26,5 @@
     'depends': ['crm'],
     'data': ['views.xml'],
     'demo': ['demo.xml']
+    'installable': False,
 }

@@ -25,4 +25,5 @@
     'version': '8.0.0.1.0',
     'depends': ['crm'],
     'data': ['views.xml'],
+    'installable': False,
 }
