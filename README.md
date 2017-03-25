@@ -15,6 +15,7 @@ These modules introduce the concept of an architect of a construction project.
 - Projects can have a an architect related to it.
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
