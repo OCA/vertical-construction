@@ -27,6 +27,7 @@ addon | version | summary
 [project_construction_architect](project_construction_architect/) | 8.0.0.1.0 | Indicate the architect of a project.
 [project_construction_site](project_construction_site/) | 8.0.0.1.0 | Construction site address of a project.
 
+
 Unported addons
 ---------------
 addon | version | summary
