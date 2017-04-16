@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Product form view -->
+        <record model="ir.ui.view" id="view_product_form_insulation">
+            <field name="name">product.insulation.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Information']" position="inside">
+                    <group colspan="2" col="2">
+                        <separator string="Insulation" colspan="2"/>
+                        <field name="insulation"/>
+                        <field name="rvalue" attrs="{'invisible':[('insulation', '=', False)]}"/>
+                        <field name="sprayfoam" attrs="{'invisible':[('insulation', '=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Product tree view -->
+        <record id="product_product_tree_view_insulation" model="ir.ui.view">
+            <field name="name">product.insulation.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="inside">
+                    <field name="insulation"/>
+                    <field name="rvalue"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- TODO: product search view -->
+
+    </data>
+</openerp>
+
