@@ -24,6 +24,7 @@
     "license": "AGPL-3",
     'category': "construction",
     'version': '10.0.0.1.0',
+    'license': 'AGPL-3',
     'depends': ['crm', 'base_construction_architect'],
     'data': ['views.xml'],
     'installable': True,
