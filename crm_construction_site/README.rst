@@ -2,7 +2,7 @@
     :alt: License: AGPL-3
 
 CRM Construction Site Address
-============================
+=============================
 
 This module allows you to assign a construction site to a lead or opportunity.
 
