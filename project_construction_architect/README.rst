@@ -2,7 +2,7 @@
     :alt: License: AGPL-3
 
 Construction Project Architect
-===========
+==============================
 
 This module allows you to assign an architect to a project.
 
