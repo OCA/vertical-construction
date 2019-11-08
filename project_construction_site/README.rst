@@ -2,7 +2,7 @@
     :alt: License: AGPL-3
 
 Construction Site Address
-============================
+=========================
 
 This module allows you to assign a construction site to a project.
 The construction site address can be different from the client address.
