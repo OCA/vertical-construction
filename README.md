@@ -18,20 +18,20 @@ These modules introduce the concept of an architect of a construction project.
 
 Unported addons
 ---------------
-addon | version | summary
---- | --- | ---
-[account_invoice_insulation](account_invoice_insulation/) | 0.1 (unported) | Invoice Insulation
-[base_construction_architect](base_construction_architect/) | 8.0.0.1.0 (unported) | Identify partners as architects.
-[construction_insulation](construction_insulation/) | 0.1 (unported) | Insulation
-[crm_construction_architect](crm_construction_architect/) | 8.0.0.1.0 (unported) | Indicate the architect of a lead/opportunity.
-[crm_construction_calculator](crm_construction_calculator/) | 8.0.0.1.0 (unported) | Assign a calculator to a lead/opportunity.
-[crm_construction_site](crm_construction_site/) | 8.0.0.1.0 (unported) | Construction site address of a lead/opportunity.
-[procurement_insulation](procurement_insulation/) | 0.1 (unported) | Procurement Insulation
-[project_construction_architect](project_construction_architect/) | 8.0.0.1.0 (unported) | Indicate the architect of a project.
-[project_construction_site](project_construction_site/) | 8.0.0.1.0 (unported) | Construction site address of a project.
-[sale_insulation](sale_insulation/) | 1.0 (unported) | Sale Insulation
-[stock_picking_delivery_insulation](stock_picking_delivery_insulation/) | 1.0 (unported) | Stock Picking Delivery Order Insulation
-[stock_picking_delivery_users](stock_picking_delivery_users/) | 1.0 (unported) | Stock Picking Delivery Users
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_invoice_insulation](account_invoice_insulation/) | 0.1 (unported) |  | Invoice Insulation
+[base_construction_architect](base_construction_architect/) | 8.0.0.1.0 (unported) |  | Identify partners as architects.
+[construction_insulation](construction_insulation/) | 0.1 (unported) |  | Insulation
+[crm_construction_architect](crm_construction_architect/) | 8.0.0.1.0 (unported) |  | Indicate the architect of a lead/opportunity.
+[crm_construction_calculator](crm_construction_calculator/) | 8.0.0.1.0 (unported) |  | Assign a calculator to a lead/opportunity.
+[crm_construction_site](crm_construction_site/) | 8.0.0.1.0 (unported) |  | Construction site address of a lead/opportunity.
+[procurement_insulation](procurement_insulation/) | 0.1 (unported) |  | Procurement Insulation
+[project_construction_architect](project_construction_architect/) | 8.0.0.1.0 (unported) |  | Indicate the architect of a project.
+[project_construction_site](project_construction_site/) | 8.0.0.1.0 (unported) |  | Construction site address of a project.
+[sale_insulation](sale_insulation/) | 1.0 (unported) |  | Sale Insulation
+[stock_picking_delivery_insulation](stock_picking_delivery_insulation/) | 1.0 (unported) |  | Stock Picking Delivery Order Insulation
+[stock_picking_delivery_users](stock_picking_delivery_users/) | 1.0 (unported) |  | Stock Picking Delivery Users
 
 [//]: # (end addons)
 
