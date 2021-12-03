@@ -20,15 +20,12 @@
 {
     'name': "OCA Construction: Architect CRM",
     'summary': """Indicate the architect of a lead/opportunity.""",
-    'description': """
-        This module allows you to:
-            - Identify the architect of a lead/opportunity.
-            - Filter/group/search opportunities by architect.
-    """,
     'author': "Mathias Colpaert, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
     'category': "construction",
-    'version': '8.0.0.1.0',
+    'version': '10.0.0.1.0',
+    'license': 'AGPL-3',
     'depends': ['crm', 'base_construction_architect'],
     'data': ['views.xml'],
-    'installable': False,
+    'installable': True,
 }
