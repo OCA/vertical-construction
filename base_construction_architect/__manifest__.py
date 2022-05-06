@@ -20,15 +20,11 @@
 {
     'name': "OCA Construction: Architect Base",
     'summary': "Identify partners as architects.",
-    'description': """
-        This module allows you to:
-            - Identify a partner as an architect.
-            - Filter architects from address book.
-    """,
     'author': "Mathias Colpaert, Odoo Community Association (OCA)",
     'category': "construction",
-    'version': '8.0.0.1.0',
+    'version': '10.0.0.1.0',
+    'license': 'AGPL-3',
     'depends': ['base'],
     'data': ['views.xml'],
-    'installable': False,
+    'installable': True,
 }
