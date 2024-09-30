@@ -16,7 +16,11 @@ TODO: add repo description.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[bc3_importer](bc3_importer/) | 14.0.1.0.0 |  | BC3 files importer
 
 [//]: # (end addons)
 
