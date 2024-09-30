@@ -4,10 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20231106\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-30 10:09+0000\n"
-"PO-Revision-Date: 2024-09-30 10:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +19,6 @@ msgid "Administrator"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.module.category,name:bc3_importer.module_bc3_importer
 #: model:ir.module.category,name:bc3_importer.module_bc3_importer_bc3
 #: model:ir.ui.menu,name:bc3_importer.bc3_files
 #: model:ir.ui.menu,name:bc3_importer.bc3_menuitem
@@ -200,7 +197,7 @@ msgid "Child"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__code
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__bc3_code
 msgid "Code"
 msgstr ""
 
@@ -241,11 +238,6 @@ msgid "Customer/Vendor"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__date
-msgid "Date"
-msgstr ""
-
-#. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__product_id
 msgid "Default product"
 msgstr ""
@@ -260,8 +252,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__display_name
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__display_name
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__display_name
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__display_name
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -301,7 +291,7 @@ msgid "Header"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.module.category,description:bc3_importer.module_bc3_importer
+#: model:ir.module.category,description:bc3_importer.module_bc3_importer_bc3
 msgid "Helps you handle your bc3 files, versions and registers."
 msgstr ""
 
@@ -310,8 +300,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__id
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__id
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__id
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__id
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__id
 msgid "ID"
 msgstr ""
 
@@ -350,8 +338,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version____last_update
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register____last_update
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule____last_update
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order____last_update
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line____last_update
 msgid "Last Modified on"
 msgstr ""
 
