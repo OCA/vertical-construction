@@ -13,7 +13,7 @@ class Bc3Version(models.Model):
     _name = "bc3.version"
     _description = "BC3 Version"
     _order = "name"
-    name = fields.Char("Name", required=True)
+    name = fields.Char(required=True)
     register_ids = fields.One2many(
         "bc3.version.register", "version_id", string="Registers"
     )
@@ -41,7 +41,6 @@ class Bc3VersionRegister(models.Model):
             ("g", "~G"),
             ("f", "~F"),
         ],
-        string="Name",
         required=True,
     )
     description = fields.Text("Rule Description")
@@ -90,8 +89,8 @@ class Bc3VersionRegisterRule(models.Model):
     _description = "BC3 Version Register Rule"
     _order = "sequence"
 
-    sequence = fields.Integer(string="Sequence")
-    model_id = fields.Many2one("ir.model", string="Model", ondelete="cascade")
+    sequence = fields.Integer()
+    model_id = fields.Many2one("ir.model", ondelete="cascade")
     field_id = fields.Many2one(
         "ir.model.fields",
         "Field",
