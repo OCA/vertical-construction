@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="bc3_version_2020_v2" model="bc3.version">
+        <field name="name">FIEBDC-3-2020v2</field>
+    </record>
+    <!-- Version Register-->
+    <record id="bc3_rule_v_1" model="bc3.version.register.rule">
+        <field name="sequence">1</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_file_property" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_2" model="bc3.version.register.rule">
+        <field name="sequence">2</field>
+        <field
+            name="field_id"
+            ref="bc3_importer.field_sale_order__bc3_version_format"
+        />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_3" model="bc3.version.register.rule">
+        <field name="sequence">3</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_version_date" />
+        <field name="is_child">True</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_4" model="bc3.version.register.rule">
+        <field name="sequence">4</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_program" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_5" model="bc3.version.register.rule">
+        <field name="sequence">5</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_header" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_6" model="bc3.version.register.rule">
+        <field name="sequence">6</field>
+        <field
+            name="field_id"
+            ref="bc3_importer.field_sale_order__bc3_identifying_label"
+        />
+        <field name="is_child">True</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_7" model="bc3.version.register.rule">
+        <field name="sequence">7</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_character_set" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_8" model="bc3.version.register.rule">
+        <field name="sequence">8</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_comment" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_9" model="bc3.version.register.rule">
+        <field name="sequence">9</field>
+        <field
+            name="field_id"
+            ref="bc3_importer.field_sale_order__bc3_information_type"
+        />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_10" model="bc3.version.register.rule">
+        <field name="sequence">10</field>
+        <field
+            name="field_id"
+            ref="bc3_importer.field_sale_order__bc3_certification_number"
+        />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_11" model="bc3.version.register.rule">
+        <field name="sequence">11</field>
+        <field
+            name="field_id"
+            ref="bc3_importer.field_sale_order__bc3_certification_date"
+        />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_rule_v_12" model="bc3.version.register.rule">
+        <field name="sequence">12</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order__bc3_base_url" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+    </record>
+    <record id="bc3_register_v" model="bc3.version.register">
+        <field name="name">v</field>
+        <field
+            name="description"
+        >~V | [ PROPIEDAD_ARCHIVO ] | VERSION_FORMATO [ \ DDMMAAAA ] | [
+PROGRAMA_EMISION ] | [ CABECERA ] \ { ROTULO_IDENTIFICACION \ } | [
+JUEGO_CARACTERES ] | [ COMENTARIO ] | [ TIPO INFORMACIÓN ] | [ NÚMERO
+CERTIFICACIÓN ] | [ FECHA CERTIFICACIÓN ] | [ URL_BASE ] |</field>
+        <field name="version_id" ref="bc3_importer.bc3_version_2020_v2" />
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field
+            name="rule_ids"
+            eval="[(6,0,[ref('bc3_importer.bc3_rule_v_1'),ref('bc3_importer.bc3_rule_v_2'),ref('bc3_importer.bc3_rule_v_3'),ref('bc3_importer.bc3_rule_v_4'),ref('bc3_importer.bc3_rule_v_5'),ref('bc3_importer.bc3_rule_v_6'),ref('bc3_importer.bc3_rule_v_7'),ref('bc3_importer.bc3_rule_v_8'),ref('bc3_importer.bc3_rule_v_9'),ref('bc3_importer.bc3_rule_v_10'),ref('bc3_importer.bc3_rule_v_11'),ref('bc3_importer.bc3_rule_v_12')])]"
+        />
+    </record>
+    <!-- Concept Register-->
+    <record id="bc3_rule_c_1" model="bc3.version.register.rule">
+        <field name="sequence">1</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order_line__bc3_code" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_c_2" model="bc3.version.register.rule">
+        <field name="sequence">2</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order_line__bc3_code" />
+        <field name="is_child">True</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_c_3" model="bc3.version.register.rule">
+        <field name="sequence">3</field>
+        <field name="field_id" ref="sale.field_sale_order_line__product_uom" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_c_4" model="bc3.version.register.rule">
+        <field name="sequence">4</field>
+        <field name="field_id" ref="sale.field_sale_order_line__product_template_id" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_c_5" model="bc3.version.register.rule">
+        <field name="sequence">5</field>
+        <field name="field_id" ref="sale.field_sale_order_line__price_unit" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_c_6" model="bc3.version.register.rule">
+        <field name="sequence">6</field>
+        <field name="is_child">False</field>
+    </record>
+    <record id="bc3_rule_c_7" model="bc3.version.register.rule">
+        <field name="sequence">7</field>
+        <field name="field_id" ref="product.field_product_template__categ_id" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="product.model_product_template" />
+    </record>
+    <record id="bc3_register_c" model="bc3.version.register">
+        <field name="name">c</field>
+        <field
+            name="description"
+        >~C | CODIGO { \ CODIGO } | [ UNIDAD ] | [ RESUMEN ] | { PRECIO \ } | { FECHA \ } | [ TIPO ] |</field>
+        <field name="version_id" ref="bc3_importer.bc3_version_2020_v2" />
+        <field name="model_id" ref="sale.model_sale_order_line" />
+        <field
+            name="rule_ids"
+            eval="[(6,0,[ref('bc3_importer.bc3_rule_c_1'),ref('bc3_importer.bc3_rule_c_2'),ref('bc3_importer.bc3_rule_c_3'),ref('bc3_importer.bc3_rule_c_4'),ref('bc3_importer.bc3_rule_c_5'),ref('bc3_importer.bc3_rule_c_6'),ref('bc3_importer.bc3_rule_c_7')])]"
+        />
+    </record>
+    <!-- Descomposition Register-->
+    <record id="bc3_rule_d_1" model="bc3.version.register.rule">
+        <field name="sequence">1</field>
+        <field name="field_id" ref="sale.field_sale_order_line__sequence" />
+        <field name="is_child">False</field>
+    </record>
+    <record id="bc3_rule_d_2" model="bc3.version.register.rule">
+        <field name="sequence">2</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order_line__bc3_code" />
+        <field name="is_child">False</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+        <field name="primary_key">True</field>
+        <field
+            name="field_ids"
+            eval="[(6,0,[ref('sale.field_sale_order_line__product_uom_qty'),ref('sale.field_sale_order_line__price_unit')])]"
+        />
+    </record>
+    <record id="bc3_rule_d_4" model="bc3.version.register.rule">
+        <field name="sequence">3</field>
+        <field name="is_child">True</field>
+        <field name="field_id" ref="sale.field_sale_order_line__price_unit" />
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_d_3" model="bc3.version.register.rule">
+        <field name="sequence">4</field>
+        <field name="field_id" ref="sale.field_sale_order_line__product_uom_qty" />
+        <field name="is_child">True</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+
+    <record id="bc3_rule_d_5" model="bc3.version.register.rule">
+        <field name="sequence">5</field>
+        <field name="is_child">False</field>
+    </record>
+    <record id="bc3_rule_d_6" model="bc3.version.register.rule">
+        <field name="sequence">6</field>
+        <field name="is_child">True</field>
+    </record>
+    <record id="bc3_rule_d_7" model="bc3.version.register.rule">
+        <field name="sequence">7</field>
+        <field name="is_child">True</field>
+    </record>
+    <record id="bc3_rule_d_8" model="bc3.version.register.rule">
+        <field name="sequence">8</field>
+        <field name="field_id" ref="sale.field_sale_order_line__discount" />
+        <field name="is_child">True</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_register_d" model="bc3.version.register">
+        <field name="name">d</field>
+        <field
+            name="description"
+        >~D | CODIGO_PADRE | &lt; CODIGO_HIJO \ [ FACTOR ] \ [ RENDIMIENTO ] \ &gt; | &lt; CODIGO_HIJO \ [ FACTOR ] \ [ RENDIMIENTO ] \ {CODIGO_PORCENTAJE ; } \ &gt; |</field>
+        <field name="version_id" ref="bc3_importer.bc3_version_2020_v2" />
+        <field name="model_id" ref="sale.model_sale_order_line" />
+        <field name="edit_existent">True</field>
+        <field
+            name="rule_ids"
+            eval="[(6,0,[ref('bc3_importer.bc3_rule_d_1'),ref('bc3_importer.bc3_rule_d_2'),ref('bc3_importer.bc3_rule_d_3'),ref('bc3_importer.bc3_rule_d_4'),ref('bc3_importer.bc3_rule_d_5'),ref('bc3_importer.bc3_rule_d_6'),ref('bc3_importer.bc3_rule_d_7'),ref('bc3_importer.bc3_rule_d_8')])]"
+        />
+    </record>
+    <!-- Descomposition Register-->
+    <record id="bc3_rule_t_1" model="bc3.version.register.rule">
+        <field name="sequence">1</field>
+        <field name="field_id" ref="bc3_importer.field_sale_order_line__bc3_code" />
+        <field name="primary_key">True</field>
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_rule_t_2" model="bc3.version.register.rule">
+        <field name="sequence">2</field>
+        <field name="field_id" ref="sale.field_sale_order_line__name" />
+        <field name="model_id" ref="sale.model_sale_order_line" />
+    </record>
+    <record id="bc3_register_t" model="bc3.version.register">
+        <field name="name">t</field>
+        <field name="description">~T | CODIGO_CONCEPTO | TEXTO_DESCRIPTIVO | </field>
+        <field name="version_id" ref="bc3_importer.bc3_version_2020_v2" />
+        <field name="model_id" ref="sale.model_sale_order_line" />
+        <field name="edit_existent">True</field>
+        <field
+            name="rule_ids"
+            eval="[(6,0,[ref('bc3_importer.bc3_rule_t_1'),ref('bc3_importer.bc3_rule_t_2')])]"
+        />
+    </record>
+
+    <function name="get_regular_expression" model="bc3.version.register">
+            <value eval="[ref('bc3_importer.bc3_register_c')]" />
+    </function>
+    <function name="get_regular_expression" model="bc3.version.register">
+            <value eval="[ref('bc3_importer.bc3_register_d')]" />
+    </function>
+    <function name="get_regular_expression" model="bc3.version.register">
+            <value eval="[ref('bc3_importer.bc3_register_v')]" />
+    </function>
+    <function name="get_regular_expression" model="bc3.version.register">
+            <value eval="[ref('bc3_importer.bc3_register_t')]" />
+    </function>
+</odoo>

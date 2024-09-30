@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_quotations_bc3" model="ir.actions.act_window">
+        <field name="name">BC3 Quotations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_id" ref="sale.view_quotation_tree_with_onboarding" />
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+        <field
+            name="search_view_id"
+            ref="sale.sale_order_view_search_inherit_quotation"
+        />
+        <field name="domain">[('bc3', '=', True)]</field>
+        <field name="context">{'default_bc3': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+            </p><p>
+            Once the quotation is confirmed by the customer, it becomes a sales order.<br
+                /> You will be able to create an invoice and collect the payment.
+          </p>
+        </field>
+    </record>
+    <record id="action_orders_bc3" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,calendar,graph,kanban,pivot</field>
+            <field
+            name="search_view_id"
+            ref="sale.sale_order_view_search_inherit_sale"
+        />
+            <field
+            name="domain"
+        >[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+            <field name="context">{'default_bc3': 1}</field>
+        </record>
+    <record id="view_sales_order_bc3" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="bc3" invisible="1" />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="BC3 Info" attrs="{'invisible': [('bc3', '!=', True)]}">
+                    <group string="Version Information">
+                        <group>
+                            <field name="bc3_file_property" />
+                            <field name="bc3_version_format" />
+                            <field name="bc3_version_date" />
+                            <field name="bc3_program" />
+                            <field name="bc3_header" />
+                            <field name="bc3_identifying_label" />
+                        </group>
+                        <group>
+                            <field name="bc3_character_set" />
+                            <field name="bc3_comment" />
+                            <field name="bc3_information_type" />
+                            <field name="bc3_certification_number" />
+                            <field name="bc3_certification_date" />
+                            <field name="bc3_base_url" widget="url" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath
+                expr="//field[@name='order_line']/tree/field[@name='product_id']"
+                position="before"
+            >
+                <field name="bc3_code" />
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem
+        id="bc3_quotations_show"
+        name="BC3 Quotations"
+        parent="bc3_importer.bc3_files"
+        action="bc3_importer.action_quotations_bc3"
+        sequence="2"
+    />
+    <menuitem
+        id="bc3_orders_show"
+        name="BC3 Orders"
+        parent="bc3_importer.bc3_files"
+        action="bc3_importer.action_orders_bc3"
+        sequence="3"
+    />
+</odoo>
