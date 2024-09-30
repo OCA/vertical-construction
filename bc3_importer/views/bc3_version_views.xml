@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- BC3 Version-->
+    <record id="bc3_version_action" model="ir.actions.act_window">
+        <field name="name">BC3 Version</field>
+        <field name="res_model">bc3.version</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No bc3 version found. Let's create one!
+            </p>
+        </field>
+    </record>
+    <record id="bc3_version_form_view" model="ir.ui.view">
+        <field name="name">bc3.version.form</field>
+        <field name="model">bc3.version</field>
+        <field name="arch" type="xml">
+            <form string="BC3 Version">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. FIEBDC-3-2020v2" />
+                        </h1>
+                    </div>
+                    <group string="Registers">
+                        <field name="register_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="bc3_version_tree_view" model="ir.ui.view">
+        <field name="name">bc3.version.tree</field>
+        <field name="model">bc3.version</field>
+        <field name="arch" type="xml">
+            <tree sample="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <menuitem
+        id="bc3_menuitem"
+        name="BC3"
+        parent="base.menu_custom"
+        sequence="25"
+        groups="base.group_no_one"
+    />
+    <menuitem
+        id="bc3_version_show"
+        name="BC3 Versions"
+        parent="bc3_importer.bc3_menuitem"
+        action="bc3_importer.bc3_version_action"
+        sequence="2"
+    />
+
+    <!-- BC3 Version Register-->
+    <record id="bc3_version_register_action" model="ir.actions.act_window">
+        <field name="name">Version Register</field>
+        <field name="res_model">bc3.version.register</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No register found. Let's create one!
+            </p>
+        </field>
+    </record>
+    <record id="bc3_version_register_form_view" model="ir.ui.view">
+        <field name="name">bc3.version.form.register</field>
+        <field name="model">bc3.version.register</field>
+        <field name="arch" type="xml">
+            <form string="Version Register">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. ~K" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field string="Model" name="model_id" />
+                        <field name="edit_existent" />
+                    </group>
+                    <group string="Description">
+                        <field name="description" />
+                    </group>
+                    <group string="Rules">
+                        <field name="rule_ids">
+                            <tree editable="bottom">
+                                <field name="sequence" widget="handle" />
+                                <field name="field_id" />
+                                <field name="model_id" invisible="1" />
+                                <field name="is_child" />
+                                <field name="regular_expression" />
+                                <field
+                                    name="field_ids"
+                                    attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                                />
+                                <field name="primary_key" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="bc3_version_register_tree_view" model="ir.ui.view">
+        <field name="name">bc3.version.register.tree</field>
+        <field name="model">bc3.version.register</field>
+        <field name="arch" type="xml">
+            <tree sample="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <!-- BC3 Version Register Rule-->
+    <record id="bc3_version_register_rule_action" model="ir.actions.act_window">
+        <field name="name">Register Rule</field>
+        <field name="res_model">bc3.version.register.rule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No register rule found. Let's create one!
+            </p>
+        </field>
+    </record>
+
+    <record id="bc3_version_register_rule_form_view" model="ir.ui.view">
+        <field name="name">bc3.version.register.rule.form</field>
+        <field name="model">bc3.version.register.rule</field>
+        <field name="arch" type="xml">
+            <form string="Register Rule">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="field_id" />
+                            <field name="model_id" invisible="1" />
+                            <field name="register_id" readonly="1" invisible="1" />
+                            <field
+                                name="field_ids"
+                                attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                            />
+                            <field
+                                name="primary_key"
+                                attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="bc3_version_register_rule_tree_view" model="ir.ui.view">
+        <field name="name">bc3.version.register.rule.tree</field>
+        <field name="model">bc3.version.register.rule</field>
+        <field name="arch" type="xml">
+            <tree sample="1">
+                <field name="sequence" widget="handle" />
+                <field name="field_id" />
+            </tree>
+        </field>
+    </record>
+</odoo>
