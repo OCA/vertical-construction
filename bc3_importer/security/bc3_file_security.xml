@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.module.category" id="module_bc3_importer_bc3">
+        <field name="name">BC3</field>
+        <field name="parent_id" eval="False" />
+         <field
+            name="description"
+        >Helps you handle your bc3 files, versions and registers.</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_bc3_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="category_id" ref="module_bc3_importer_bc3" />
+    </record>
+
+    <record id="group_bc3_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_bc3_importer_bc3" />
+        <field name="implied_ids" eval="[(4, ref('group_bc3_user'))]" />
+        <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+    </record>
+</odoo>
