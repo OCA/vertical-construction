@@ -283,9 +283,9 @@ class BC3ImportWizard(models.TransientModel):
                     [
                         "|",
                         "|",
-                        ("name", "in", name),
-                        ("name", "in", name.upper()),
-                        ("name", "in", name.lower()),
+                        ("name", "ilike", name),
+                        ("name", "ilike", name.upper()),
+                        ("name", "ilike", name.lower()),
                     ],
                     limit=1,
                 )
@@ -661,6 +661,7 @@ class BC3ImportWizard(models.TransientModel):
                 line["price_unit"] = 0.0
                 line["product_id"] = False
                 line["product_uom_qty"] = 0.0
+                line["product_uom"] = False
 
             if "display_type" in line and not t.display_type:
                 if not t.product_uom_qty > 1:
@@ -668,6 +669,11 @@ class BC3ImportWizard(models.TransientModel):
                     a["order_id"] = self.sale_id.id
                     a.update(line)
                     t.unlink()
+                    if "display_type" in a:
+                        a["price_unit"] = 0.0
+                        a["product_id"] = False
+                        a["product_uom_qty"] = 0.0
+                        a["product_uom"] = False
                     sale_order_line = self.env["sale.order.line"].create(a)
                     if (
                         sale_order_line.display_type
@@ -739,6 +745,7 @@ class BC3ImportWizard(models.TransientModel):
                     line["price_unit"] = 0.0
                     line["product_id"] = False
                     line["product_uom_qty"] = 0.0
+                    line["product_uom"] = False
                 sale_order_line = self.env["sale.order.line"].create(line)
                 if (
                     sale_order_line.display_type
