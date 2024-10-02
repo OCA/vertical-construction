@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,37 +36,31 @@ msgid "BC3 Orders"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_cubic_meter
 #: model:product.template,name:bc3_importer.product_product_product_cubic_meter_product_template
 msgid "BC3 Product (Cubic meter)"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_l
 #: model:product.template,name:bc3_importer.product_product_product_l_product_template
 msgid "BC3 Product (L)"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_meter
 #: model:product.template,name:bc3_importer.product_product_product_meter_product_template
 msgid "BC3 Product (Meter)"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_square_meter
 #: model:product.template,name:bc3_importer.product_product_product_square_meter_product_template
 msgid "BC3 Product (Square meter)"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_units
 #: model:product.template,name:bc3_importer.product_product_product_units_product_template
 msgid "BC3 Product (Units)"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,name:bc3_importer.product_product_product_g
 #: model:product.template,name:bc3_importer.product_product_product_g_product_template
 msgid "BC3 Product (g)"
 msgstr ""
@@ -140,12 +134,6 @@ msgid "BC3 file name"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,description_sale:bc3_importer.product_product_product_cubic_meter
-#: model:product.product,description_sale:bc3_importer.product_product_product_g
-#: model:product.product,description_sale:bc3_importer.product_product_product_l
-#: model:product.product,description_sale:bc3_importer.product_product_product_meter
-#: model:product.product,description_sale:bc3_importer.product_product_product_square_meter
-#: model:product.product,description_sale:bc3_importer.product_product_product_units
 #: model:product.template,description_sale:bc3_importer.product_product_product_cubic_meter_product_template
 #: model:product.template,description_sale:bc3_importer.product_product_product_g_product_template
 #: model:product.template,description_sale:bc3_importer.product_product_product_l_product_template
@@ -256,18 +244,21 @@ msgid "Display Name"
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Dynamic Product "
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/models/bc3_version.py:0
 #, python-format
 msgid "Error in register description or not enough rules"
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
@@ -393,6 +384,7 @@ msgid ""
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Parsing error, missing data"
@@ -425,6 +417,7 @@ msgid "Register Rule"
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/models/bc3_version.py:0
 #, python-format
 msgid "Register name should unique"
@@ -488,6 +481,7 @@ msgid "Sequence"
 msgstr ""
 
 #. module: bc3_importer
+#. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Show Sale Order"
@@ -496,13 +490,6 @@ msgstr ""
 #. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__edit_existent
 msgid "The register may edit existent records"
-msgstr ""
-
-#. module: bc3_importer
-#: model:product.product,uom_name:bc3_importer.product_product_product_units
-#: model:product.template,uom_name:bc3_importer.product_product_product_template_units
-#: model:product.template,uom_name:bc3_importer.product_product_product_units_product_template
-msgid "Units"
 msgstr ""
 
 #. module: bc3_importer
@@ -548,16 +535,6 @@ msgid "e.g. ~K"
 msgstr ""
 
 #. module: bc3_importer
-#: model:product.product,uom_name:bc3_importer.product_product_product_square_meter
-#: model:product.template,uom_name:bc3_importer.product_product_product_square_meter_product_template
-#: model:product.template,uom_name:bc3_importer.product_product_product_template_square_meter
 #: model:uom.uom,name:bc3_importer.product_uom_square_meter
 msgid "m2"
-msgstr ""
-
-#. module: bc3_importer
-#: model:product.product,uom_name:bc3_importer.product_product_product_cubic_meter
-#: model:product.template,uom_name:bc3_importer.product_product_product_cubic_meter_product_template
-#: model:product.template,uom_name:bc3_importer.product_product_product_template_cubic_meter
-msgid "m³"
 msgstr ""
