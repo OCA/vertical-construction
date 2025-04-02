@@ -1,5 +1,4 @@
 import base64
-import io
 import os
 import re
 import tempfile
@@ -74,9 +73,7 @@ class BC3ImportWizard(models.TransientModel):
             file_content = list(
                 filter(
                     None,
-                    io.open(fname, "rt", encoding=encoding, errors="replace")
-                    .read()
-                    .split("~"),
+                    open(fname, encoding=encoding, errors="replace").read().split("~"),
                 )
             )
             for f in file_content:
@@ -195,7 +192,7 @@ class BC3ImportWizard(models.TransientModel):
                     .sudo()
                     .search([("bc3_code", "=", c), ("order_id", "=", self.sale_id.id)])
                 )
-                if line and not (c in lines):
+                if line and c not in lines:
                     line.sudo().unlink()
         return {
             "name": _("Show Sale Order"),
@@ -306,9 +303,10 @@ class BC3ImportWizard(models.TransientModel):
                 erase_lines.append(temp_line["bc3_code"])
             return
         if existent_line and not existent_line.id == sale_order_line.id and lines:
-            if not self.line_in_dict(
-                existent_line.bc3_code, sale_order_line.id
-            ) and not (sale_order_line.id in self.sale_id.order_line.ids):
+            if (
+                not self.line_in_dict(existent_line.bc3_code, sale_order_line.id)
+                and sale_order_line.id not in self.sale_id.order_line.ids
+            ):
                 create_line = True
             elif self.line_in_any_dict(sale_order_line.id):
                 create_line = True

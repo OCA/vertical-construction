@@ -4,7 +4,7 @@ from odoo.tests.common import TransactionCase
 
 class TestBC3Version(TransactionCase):
     def setUp(self):
-        super(TestBC3Version, self).setUp()
+        super().setUp()
         self.bc3_version = self.env["bc3.version"].create({"name": "Test Version"})
         self.bc3_version_register = self.env["bc3.version.register"].create(
             {
