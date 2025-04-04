@@ -41,6 +41,12 @@ class BC3ImportWizard(models.TransientModel):
         domain="['|', ('parent_id','=', False), ('is_company','=', True)]",
         check_company=True,
     )
+    company_id = fields.Many2one(
+        "res.company",
+        string="Company",
+        default = lambda self: self.env.company,
+        readonly=True
+    )
     create_products = fields.Boolean("Create non-existent products")
     product_id = fields.Many2one(
         "product.product",
