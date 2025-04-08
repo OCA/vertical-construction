@@ -1,0 +1,540 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bc3_importer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bc3_importer
+#: model:res.groups,name:bc3_importer.group_bc3_manager
+msgid "Administrator"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.module.category,name:bc3_importer.module_bc3_importer_bc3
+#: model:ir.ui.menu,name:bc3_importer.bc3_files
+#: model:ir.ui.menu,name:bc3_importer.bc3_menuitem
+msgid "BC3"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.view_sales_order_bc3
+msgid "BC3 Info"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.ui.menu,name:bc3_importer.bc3_orders_show
+msgid "BC3 Orders"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_cubic_meter_product_template
+msgid "BC3 Product (Cubic meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_l_product_template
+msgid "BC3 Product (L)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_meter_product_template
+msgid "BC3 Product (Meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_square_meter_product_template
+msgid "BC3 Product (Square meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_units_product_template
+msgid "BC3 Product (Units)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_g_product_template
+msgid "BC3 Product (g)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.action_quotations_bc3
+#: model:ir.ui.menu,name:bc3_importer.bc3_quotations_show
+msgid "BC3 Quotations"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_cubic_meter
+msgid "BC3 Template Product (Cubic meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_l
+msgid "BC3 Template Product (L)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_meter
+msgid "BC3 Template Product (Meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_square_meter
+msgid "BC3 Template Product (Square meter)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_units
+msgid "BC3 Template Product (Units)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,name:bc3_importer.product_product_product_template_g
+msgid "BC3 Template Product (g)"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.bc3_version_action
+#: model:ir.model,name:bc3_importer.model_bc3_version
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_form_view
+msgid "BC3 Version"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model,name:bc3_importer.model_bc3_version_register
+msgid "BC3 Version Register"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model,name:bc3_importer.model_bc3_version_register_rule
+msgid "BC3 Version Register Rule"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.ui.menu,name:bc3_importer.bc3_version_show
+msgid "BC3 Versions"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__bc3_file
+msgid "BC3 file"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__bc3_file_name
+msgid "BC3 file name"
+msgstr ""
+
+#. module: bc3_importer
+#: model:product.template,description_sale:bc3_importer.product_product_product_cubic_meter_product_template
+#: model:product.template,description_sale:bc3_importer.product_product_product_g_product_template
+#: model:product.template,description_sale:bc3_importer.product_product_product_l_product_template
+#: model:product.template,description_sale:bc3_importer.product_product_product_meter_product_template
+#: model:product.template,description_sale:bc3_importer.product_product_product_square_meter_product_template
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_cubic_meter
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_g
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_l
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_meter
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_square_meter
+#: model:product.template,description_sale:bc3_importer.product_product_product_template_units
+#: model:product.template,description_sale:bc3_importer.product_product_product_units_product_template
+msgid "BC3 product that will be used if imported product does not exist."
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3
+msgid "BC3 sale order"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_base_url
+msgid "Base url"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_import_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_certification_date
+msgid "Certification date"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_certification_number
+msgid "Certification number"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_character_set
+msgid "Character set"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__is_child
+msgid "Child"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__bc3_code
+msgid "Code"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_comment
+msgid "Comment"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.actions.act_window,help:bc3_importer.action_quotations_bc3
+msgid "Create a new quotation, the first step of a new sale!"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__create_products
+msgid "Create non-existent products"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__create_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__create_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__create_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__create_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__create_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__create_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__partner_id
+msgid "Customer/Vendor"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__product_id
+msgid "Default product"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_form_view
+msgid "Description"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__display_name
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__display_name
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__display_name
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Dynamic Product "
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/models/bc3_version.py:0
+#, python-format
+msgid "Error in register description or not enough rules"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Error parsing the file"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__field_id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__field_ids
+msgid "Field"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_file_property
+msgid "File property"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_header
+msgid "Header"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.module.category,description:bc3_importer.module_bc3_importer_bc3
+msgid "Helps you handle your bc3 files, versions and registers."
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__id
+msgid "ID"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_identifying_label
+msgid "Identifying label"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_import_wizard_form
+msgid "Import"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.ui.menu,name:bc3_importer.bc3_files_import
+msgid "Import BC3"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.bc3_import_wizard_action
+msgid "Import BC3 File"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model,name:bc3_importer.model_bc3_import_wizard
+msgid "Import BC3 file"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_information_type
+msgid "Information Type"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard____last_update
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version____last_update
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register____last_update
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__write_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__write_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__write_uid
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__write_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__write_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__write_date
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__model_id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__model_id
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_form_view
+msgid "Model"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__name
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__name
+msgid "Name"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.actions.act_window,help:bc3_importer.bc3_version_action
+msgid "No bc3 version found. Let's create one!"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.actions.act_window,help:bc3_importer.bc3_version_register_action
+msgid "No register found. Let's create one!"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.actions.act_window,help:bc3_importer.bc3_version_register_rule_action
+msgid "No register rule found. Let's create one!"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.actions.act_window,help:bc3_importer.action_quotations_bc3
+msgid ""
+"Once the quotation is confirmed by the customer, it becomes a sales "
+"order.<br> You will be able to create an invoice and collect the payment."
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Parsing error, missing data"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__primary_key
+msgid "Primary key"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_program
+msgid "Program"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__project_id
+msgid "Project"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__register_id
+msgid "Register"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.bc3_version_register_rule_action
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_rule_form_view
+msgid "Register Rule"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/models/bc3_version.py:0
+#, python-format
+msgid "Register name should unique"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version__register_ids
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_form_view
+msgid "Registers"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__regular_expression
+msgid "Regular expression"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__description
+msgid "Rule Description"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__rule_ids
+msgid "Rule Lines"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_form_view
+msgid "Rules"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__sale_id
+msgid "Sale Order"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model,name:bc3_importer.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model,name:bc3_importer.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.action_orders_bc3
+msgid "Sales Orders"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,help:bc3_importer.field_bc3_import_wizard__product_id
+msgid "Select a product which will be used in the BC3 file."
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__sequence
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Show Sale Order"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__edit_existent
+msgid "The register may edit existent records"
+msgstr ""
+
+#. module: bc3_importer
+#: model:res.groups,name:bc3_importer.group_bc3_user
+msgid "User"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__version_id
+#: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register__version_id
+msgid "Version"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_version_format
+msgid "Version / Format"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.view_sales_order_bc3
+msgid "Version Information"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.actions.act_window,name:bc3_importer.bc3_version_register_action
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_form_view
+msgid "Version Register"
+msgstr ""
+
+#. module: bc3_importer
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order__bc3_version_date
+msgid "Version date"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_form_view
+msgid "e.g. FIEBDC-3-2020v2"
+msgstr ""
+
+#. module: bc3_importer
+#: model_terms:ir.ui.view,arch_db:bc3_importer.bc3_version_register_form_view
+msgid "e.g. ~K"
+msgstr ""
+
+#. module: bc3_importer
+#: model:uom.uom,name:bc3_importer.product_uom_square_meter
+msgid "m2"
+msgstr ""
