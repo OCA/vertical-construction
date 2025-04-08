@@ -41,6 +41,12 @@ class BC3ImportWizard(models.TransientModel):
         domain="['|', ('parent_id','=', False), ('is_company','=', True)]",
         check_company=True,
     )
+    company_id = fields.Many2one(
+        "res.company",
+        string="Company",
+        default=lambda self: self.env.company,
+        readonly=True,
+    )
     create_products = fields.Boolean("Create non-existent products")
     product_id = fields.Many2one(
         "product.product",
@@ -60,9 +66,7 @@ class BC3ImportWizard(models.TransientModel):
             .create({"partner_id": self.partner_id.id, "bc3": True})
             .id
         )
-        # decode the base64 encoded data
         data = base64.decodebytes(self.bc3_file)
-        # create a temporary file, and save the bc3
         fobj = tempfile.NamedTemporaryFile(delete=False)
         fname = fobj.name
         fobj.write(data)
@@ -80,120 +84,12 @@ class BC3ImportWizard(models.TransientModel):
                 self._parse_register(f)
             # do stuff here
         finally:
-            # delete the file when done
             os.unlink(fname)
             seq = 0
             line_ids = []
-            sorted_chapters = dict(sorted(lines.items()))
-            for key in sorted_chapters:
-                s = (
-                    self.env["sale.order.line"]
-                    .sudo()
-                    .search(
-                        [("bc3_code", "=", key), ("order_id", "=", self.sale_id.id)],
-                        limit=1,
-                    )
-                )
-                if s and (
-                    (s.price_unit == 1 and s.product_uom_qty == 1)
-                    or (s.price_unit == 0 and s.product_uom_qty == 1)
-                    or ("%" in s.bc3_code)
-                    or (s.price_unit == 1)
-                ):
-                    s.sudo().unlink()
-                    self.env["sale.order.line"].sudo().search(
-                        [("id", "in", sorted_chapters[key])]
-                    ).unlink()
-                elif s:
-                    if s.id not in line_ids:
-                        line_ids.append(s.id)
-                        s.write({"sequence": seq})
-                        seq += 1
-                    for line in (
-                        self.env["sale.order.line"]
-                        .sudo()
-                        .search(
-                            [
-                                ("order_id", "=", self.sale_id.id),
-                                ("id", "in", sorted_chapters[key]),
-                            ]
-                        )
-                        .sorted("name")
-                    ):
-                        if line:
-                            if (
-                                (line.price_unit == 1 and line.product_uom_qty == 1)
-                                or (line.price_unit == 0 and line.product_uom_qty == 1)
-                                or ("%" in line.bc3_code)
-                                or (line.price_unit == 1)
-                                or not line.price_subtotal
-                            ):
-                                line.sudo().unlink()
-                            elif line.id not in line_ids:
-                                line_ids.append(line.id)
-                                line.sudo().write({"sequence": seq})
-                                seq += 1
-                elif not s and key == "0":
-                    for line in (
-                        self.env["sale.order.line"]
-                        .sudo()
-                        .search(
-                            [
-                                ("order_id", "=", self.sale_id.id),
-                                ("id", "in", sorted_chapters[key]),
-                            ]
-                        )
-                        .sorted("name")
-                    ):
-                        if line:
-                            if (
-                                (line.price_unit == 1 and line.product_uom_qty == 1)
-                                or (line.price_unit == 0 and line.product_uom_qty == 1)
-                                or ("%" in line.bc3_code)
-                                or (line.price_unit == 1)
-                            ):
-                                line.sudo().unlink()
-                            else:
-                                line_ids.append(line.id)
-                                line.sudo().write({"sequence": seq})
-                                seq += 1
-            for s in self.env["sale.order.line"].search(
-                [("order_id", "=", self.sale_id.id)], order="sequence asc"
-            ):
-                if (
-                    (s.price_unit == 1 and s.product_uom_qty == 1)
-                    or (s.price_unit == 0 and s.product_uom_qty == 1)
-                    or (s.bc3_code and "%" in s.bc3_code)
-                    or (s.price_unit == 1)
-                ) and not s.display_type:
-                    s.sudo().unlink()
-                elif s.id not in line_ids and not s.display_type == "line_note":
-                    s.sudo().unlink()
-                elif s.bc3_code not in lines and s.display_type == "line_section":
-                    s.sudo().unlink()
-                elif s.display_type == "line_section":
-                    next_sequence = (
-                        self.env["sale.order.line"]
-                        .sudo()
-                        .search(
-                            [
-                                ("order_id", "=", self.sale_id.id),
-                                ("display_type", "=", "line_section"),
-                                ("sequence", ">", s.sequence),
-                            ],
-                            limit=1,
-                        )
-                    )
-                    if next_sequence and next_sequence.sequence == s.sequence + 1:
-                        s.sudo().unlink()
-            for c in erase_lines:
-                line = (
-                    self.env["sale.order.line"]
-                    .sudo()
-                    .search([("bc3_code", "=", c), ("order_id", "=", self.sale_id.id)])
-                )
-                if line and c not in lines:
-                    line.sudo().unlink()
+            seq, line_ids = self._process_chapters_cleanup(seq, line_ids)
+            seq = self._cleanup_remaining_lines(seq, line_ids)
+            self._cleanup_erase_lines()
         return {
             "name": _("Show Sale Order"),
             "type": "ir.actions.act_window",
@@ -205,6 +101,108 @@ class BC3ImportWizard(models.TransientModel):
             "target": "current",
             "res_id": self.sale_id.id,
         }
+
+    def _process_chapters_cleanup(self, seq, line_ids):
+        sorted_chapters = dict(sorted(lines.items()))
+        SaleLine = self.env["sale.order.line"].sudo()
+
+        for key in sorted_chapters:
+            s = SaleLine.search(
+                [("bc3_code", "=", key), ("order_id", "=", self.sale_id.id)],
+                limit=1,
+            )
+            if s and (
+                (s.price_unit == 1 and s.product_uom_qty == 1)
+                or (s.price_unit == 0 and s.product_uom_qty == 1)
+                or ("%" in s.bc3_code)
+                or (s.price_unit == 1)
+            ):
+                s.unlink()
+                SaleLine.search([("id", "in", sorted_chapters[key])]).unlink()
+            elif s:
+                if s.id not in line_ids:
+                    line_ids.append(s.id)
+                    s.write({"sequence": seq})
+                    seq += 1
+                for line in SaleLine.search(
+                    [
+                        ("order_id", "=", self.sale_id.id),
+                        ("id", "in", sorted_chapters[key]),
+                    ]
+                ).sorted("name"):
+                    if line:
+                        if (
+                            (line.price_unit == 1 and line.product_uom_qty == 1)
+                            or (line.price_unit == 0 and line.product_uom_qty == 1)
+                            or ("%" in line.bc3_code)
+                            or (line.price_unit == 1)
+                            or not line.price_subtotal
+                        ):
+                            line.unlink()
+                        elif line.id not in line_ids:
+                            line_ids.append(line.id)
+                            line.write({"sequence": seq})
+                            seq += 1
+            elif not s and key == "0":
+                for line in SaleLine.search(
+                    [
+                        ("order_id", "=", self.sale_id.id),
+                        ("id", "in", sorted_chapters[key]),
+                    ]
+                ).sorted("name"):
+                    if line:
+                        if (
+                            (line.price_unit == 1 and line.product_uom_qty == 1)
+                            or (line.price_unit == 0 and line.product_uom_qty == 1)
+                            or ("%" in line.bc3_code)
+                            or (line.price_unit == 1)
+                        ):
+                            line.unlink()
+                        else:
+                            line_ids.append(line.id)
+                            line.write({"sequence": seq})
+                            seq += 1
+        return seq, line_ids
+
+    def _cleanup_remaining_lines(self, seq, line_ids):
+        SaleLine = self.env["sale.order.line"].sudo()
+
+        for s in SaleLine.search(
+            [("order_id", "=", self.sale_id.id)], order="sequence asc"
+        ):
+            if (
+                (s.price_unit == 1 and s.product_uom_qty == 1)
+                or (s.price_unit == 0 and s.product_uom_qty == 1)
+                or (s.bc3_code and "%" in s.bc3_code)
+                or (s.price_unit == 1)
+            ) and not s.display_type:
+                s.unlink()
+            elif s.id not in line_ids and s.display_type != "line_note":
+                s.unlink()
+            elif s.bc3_code not in lines and s.display_type == "line_section":
+                s.unlink()
+            elif s.display_type == "line_section":
+                next_sequence = SaleLine.search(
+                    [
+                        ("order_id", "=", self.sale_id.id),
+                        ("display_type", "=", "line_section"),
+                        ("sequence", ">", s.sequence),
+                    ],
+                    limit=1,
+                )
+                if next_sequence and next_sequence.sequence == s.sequence + 1:
+                    s.unlink()
+        return seq
+
+    def _cleanup_erase_lines(self):
+        SaleLine = self.env["sale.order.line"].sudo()
+
+        for c in erase_lines:
+            line = SaleLine.search(
+                [("bc3_code", "=", c), ("order_id", "=", self.sale_id.id)]
+            )
+            if line and c not in lines:
+                line.unlink()
 
     def parse_line(self, line):
         split_line = line.rstrip().strip().split("|")
@@ -832,14 +830,14 @@ class BC3ImportWizard(models.TransientModel):
                 for r in register_rules:
                     if r.field_ids:
                         for a in register_rules.filtered(
-                            lambda rule: rule.field_id in r.field_ids
+                            lambda rule, r=r: rule.field_id in r.field_ids
                         ):
                             temp_r.append(a)
                         temp_r.insert(0, r)
                         repeat_value_rule[r] = temp_r
                         rule_ids.append(r.id)
                         rule_ids += register_rules.filtered(
-                            lambda rule: rule.field_id in r.field_ids
+                            lambda rule, r=r: rule.field_id in r.field_ids
                         ).ids
 
                 render_func = getattr(self, "_parse_register_edit_" + model, None)

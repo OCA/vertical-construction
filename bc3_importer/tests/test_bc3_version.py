@@ -1,8 +1,9 @@
 from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestBC3Version(TransactionCase):
+class TestBC3Version(BaseCommon):
     def setUp(self):
         super().setUp()
         self.bc3_version = self.env["bc3.version"].create({"name": "Test Version"})
