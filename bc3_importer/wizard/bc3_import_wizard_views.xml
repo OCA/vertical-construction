@@ -13,6 +13,7 @@
                             filename="bc3_file_name"
                         />
                         <field name="partner_id" required="1" />
+                        <field name="company_id" invisible="True" />
                         <!--<field name="project_id"/>-->
                     </group>
                     <group>
