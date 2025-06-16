@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <!-- Multi - Company Rules -->
+    <record id="certification_comp_rule" model="ir.rule">
+        <field name="name">Certification multi-company</field>
+        <field name="model_id" ref="model_order_certification" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="certification_line_comp_rule" model="ir.rule">
+        <field name="name">Certification Line multi-company</field>
+        <field name="model_id" ref="model_certification_line" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

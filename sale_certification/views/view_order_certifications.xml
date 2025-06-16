@@ -1,0 +1,186 @@
+<odoo>
+    <!-- Action for Certification -->
+    <record id="order_certification_action" model="ir.actions.act_window">
+        <field name="name">Certification</field>
+        <field name="res_model">order.certification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Certifications Tree View-->
+    <record id="view_order_certifications_tree" model="ir.ui.view">
+        <field name="name">order.certification.tree</field>
+        <field name="model">order.certification</field>
+        <field name="arch" type="xml">
+            <tree create="False">
+                <field name="name" />
+                <field name="order_id" />
+                <field
+                    name="state"
+                    decoration-success="state == 'confirmed'"
+                    decoration-info="state == 'draft'"
+                    decoration-danger="state == 'cancel'"
+                    widget="badge"
+                />
+                <field
+                    name="invoice_status"
+                    decoration-success="invoice_status == 'invoiced'"
+                    decoration-info="invoice_status == 'to invoice'"
+                    widget="badge"
+                />
+                <field name="certification_date" />
+            </tree>
+        </field>
+    </record>
+
+    <!--Certifications Form View-->
+    <record id="view_order_certifications_form" model="ir.ui.view">
+        <field name="name">order.certification.form</field>
+        <field name="model">order.certification</field>
+        <field name="arch" type="xml">
+            <form create="False">
+                <header>
+                    <field name="invoice_status" invisible="True" />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirmed,cancel"
+                    />
+                    <button
+                        id="create_invoice"
+                        type="action"
+                        name="%(sale_certification.action_view_certification_invoice_wizard)d"
+                        string="Create Invoice"
+                        class="oe_highlight"
+                        invisible="invoice_status != 'to invoice'"
+                    />
+                    <button
+                        name="button_confirm"
+                        type="object"
+                        string="Confirm"
+                        class="oe_highlight"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="button_cancel"
+                        type="object"
+                        string="Cancel"
+                        confirm="Are you sure you want to cancel this certification?"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="button_back2draft"
+                        type="object"
+                        string="Back to Draft"
+                        invisible="state != 'confirmed'"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_view_invoice"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o"
+                            invisible="invoice_count == 0"
+                        >
+                            <field
+                                name="invoice_count"
+                                widget="statinfo"
+                                string="Invoices"
+                            />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="True" />
+                        </h1>
+                            <field name="order_id" readonly="True" />
+                    </div>
+
+                    <separator />
+                    <group>
+                        <field
+                            name="company_id"
+                            groups="base.group_multi_company"
+                            readonly="True"
+                        />
+                    </group>
+                    <group>
+                        <field name="certification_date" readonly="True" />
+                        <field
+                            name="certification_line_ids"
+                            mode="tree"
+                            readonly="state != 'draft'"
+                            widget="section_and_note_one2many"
+                        >
+                            <tree editable="bottom" create="False">
+                                <control>
+                                    <create
+                                        name="add_product_control"
+                                        string="Add a product"
+                                    />
+                                    <create
+                                        name="add_section_control"
+                                        string="Add a section"
+                                        context="{'default_display_type': 'line_section'}"
+                                    />
+                                    <create
+                                        name="add_note_control"
+                                        string="Add a note"
+                                        context="{'default_display_type': 'line_note'}"
+                                    />
+                                </control>
+                                <field name="sequence" column_invisible="True" />
+                                <field name="display_type" column_invisible="True" />
+                                <field name="company_id" column_invisible="True" />
+                                <field name="invoice_status" column_invisible="True" />
+                                <field name="product_id" />
+                                <field name="name" />
+                                <field name="quantity" />
+                                <field
+                                    name="qty_invoiced"
+                                    decoration-info="(not display_type and invoice_status == 'to invoice')"
+                                    decoration-bf="(not display_type and invoice_status == 'to invoice')"
+                                    string="Invoiced"
+                                    column_invisible="parent.state != 'confirmed'"
+                                    optional="show"
+                                />
+                                <field name="product_uom_id" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--certification.line Tree Form-->
+    <record id="view_certification_line_tree" model="ir.ui.view">
+        <field name="name">certification.line.tree</field>
+        <field name="model">certification.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id" />
+                <field name="quantity" />
+            </tree>
+        </field>
+    </record>
+
+    <!--order.certifications reference-->
+    <record id="seq_order_certification" model="ir.sequence">
+        <field name="name">Order Certification</field>
+        <field name="code">order.certification</field>
+        <field name="prefix">CERT/</field>
+        <field name="padding">5</field>
+    </record>
+
+    <!-- Root menu -->
+    <menuitem id="order_certification_root_menu" name="Certifications" />
+
+    <!-- Order Certification menu -->
+    <menuitem
+        id="order_certification_menu"
+        name="Certifications"
+        parent="order_certification_root_menu"
+    />
+</odoo>

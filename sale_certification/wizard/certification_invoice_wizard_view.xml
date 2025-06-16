@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_certification_invoice_wizard_form" model="ir.ui.view">
+        <field name="name">certification.invoice.wizard.form</field>
+        <field name="model">certification.invoice.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Certification">
+                <group>
+                    <group>
+                        <field name="order_certification_ids" invisible="True" />
+                        <field name="retention_monies" />
+                    </group>
+                    <group invisible="not retention_monies">
+                        <field name="retention_type" required="retention_monies" />
+                        <field
+                            name="retention_percentage"
+                            invisible="retention_type != 'percentage'"
+                            required="retention_type == 'percentage'"
+                            widget="percentage"
+                        />
+                        <field
+                            name="retention_value"
+                            invisible="retention_type != 'value'"
+                            required="retention_type == 'value'"
+                        />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        string="Create"
+                        type="object"
+                        name="create_invoices"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_certification_invoice_wizard" model="ir.actions.act_window">
+        <field name="name">Create Invoices</field>
+        <field name="res_model">certification.invoice.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field
+            name="binding_model_id"
+            ref="sale_certification.model_order_certification"
+        />
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
