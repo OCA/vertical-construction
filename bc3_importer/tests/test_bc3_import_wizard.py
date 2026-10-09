@@ -1,12 +1,12 @@
 import base64
 import os
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-class TestBC3ImportWizard(TransactionCase):
+class TestBC3ImportWizard(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

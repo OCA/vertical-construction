@@ -92,7 +92,7 @@
                                 <field name="regular_expression" />
                                 <field
                                     name="field_ids"
-                                    attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                                    column_invisible="parent.edit_existent == False"
                                 />
                                 <field name="primary_key" />
                             </tree>
@@ -136,11 +136,11 @@
                             <field name="register_id" readonly="1" invisible="1" />
                             <field
                                 name="field_ids"
-                                attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                                column_invisible="parent.edit_existent == False"
                             />
                             <field
                                 name="primary_key"
-                                attrs="{'column_invisible': [('parent.edit_existent', '=', False)]}"
+                                column_invisible="parent.edit_existent == False"
                             />
                         </group>
                     </group>

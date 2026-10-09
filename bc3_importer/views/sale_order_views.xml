@@ -44,7 +44,7 @@
                 <field name="bc3" invisible="1" />
             </xpath>
             <xpath expr="//notebook" position="inside">
-                <page string="BC3 Info" attrs="{'invisible': [('bc3', '!=', True)]}">
+                <page string="BC3 Info" invisible="bc3 != True">
                     <group string="Version Information">
                         <group>
                             <field name="bc3_file_property" />
