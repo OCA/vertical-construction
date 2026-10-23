@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem id="order_certification_menu_root" name="Certifications">
+        <menuitem id="order_certification_menu" name="Certifications" sequence="5">
+            <menuitem
+                id="order_certification_menu_action"
+                action="order_certification_action"
+                sequence="5"
+            />
+        </menuitem>
+    </menuitem>
+</odoo>

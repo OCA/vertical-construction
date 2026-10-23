@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_certification_wizard_form" model="ir.ui.view">
+        <field name="name">certification.wizard.form</field>
+        <field name="model">certification.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Certification">
+                <group>
+                    <field name="sale_order_ids" invisible="True" />
+                    <field name="certification_type" />
+                    <field
+                        name="percentage"
+                        invisible="certification_type not in ['percentage','chapters']"
+                        required="certification_type in ['percentage','chapters']"
+                        widget="percentage"
+                    />
+                    <field
+                        name="chapter_ids"
+                        invisible="certification_type != 'chapters'"
+                    >
+                        <tree create="False">
+                            <field name="order_id" />
+                            <field name="name" />
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button
+                        string="Create"
+                        type="object"
+                        name="create_certifications"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_certification_wizard" model="ir.actions.act_window">
+        <field name="name">Create certifications</field>
+        <field name="res_model">certification.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
