@@ -1,0 +1,11 @@
+~V|SOFT S.A.|FIEBDC-3/2016|Presto 8.8||ANSI|
+~K|\2\2\3\2\2\2\2\EUR\|0|
+~M|C01\E04CM040|1\1\|23|\Muro M1\1\10\1\2\\Zapata Z1\2\3\\0.5\|
+~C|OBRA##||Obra de prueba|1000|011222|0|
+~C|C01#||Cimentacion|500|011222|0|
+~C|C02#||Estructura|500|011222|0|
+~C|E04CM040|m3|Hormigon de limpieza|25.50|011222|0|
+~D|OBRA##|C01\1\1\C02\1\1\|
+~D|C01#|E04CM040\1\23\|
+~D|C02#|E04CM040\1\15\|
+~M|C02\E04CM040|2\1\|15|\Muro M2\3\5\1\1\|
