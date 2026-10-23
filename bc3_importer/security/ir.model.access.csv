@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bc3_import_wizard,bc3.import.wizard,model_bc3_import_wizard,bc3_importer.group_bc3_user,1,0,0,0
+access_bc3_version,bc3.version,model_bc3_version,bc3_importer.group_bc3_user,1,0,0,0
+access_bc3_version_register,bc3.version.register,model_bc3_version_register,bc3_importer.group_bc3_user,1,0,0,0
+access_bc3_version_register_rule,bc3.version.register.rule,model_bc3_version_register_rule,bc3_importer.group_bc3_user,1,0,0,0
+access_bc3_import_wizard_manager,bc3.import.wizard.manager,model_bc3_import_wizard,bc3_importer.group_bc3_manager,1,1,1,1
+access_bc3_version_manager,bc3.version-manager,model_bc3_version,bc3_importer.group_bc3_manager,1,1,1,1
+access_bc3_version_register_manager,bc3.version.register.manager,model_bc3_version_register,bc3_importer.group_bc3_manager,1,1,1,1
+access_bc3_version_register_rule_manager,bc3.version.register.rule.manager,model_bc3_version_register_rule,bc3_importer.group_bc3_manager,1,1,1,1
