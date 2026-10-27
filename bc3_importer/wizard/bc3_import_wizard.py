@@ -79,8 +79,8 @@ class BC3ImportWizard(models.TransientModel):
                     .split("~"),
                 )
             )
-            for f in file_content:
-                self._parse_register(f)
+            for line in file_content:
+                self._parse_register(line)
             # do stuff here
         finally:
             # delete the file when done
@@ -877,6 +877,10 @@ class BC3ImportWizard(models.TransientModel):
             .rule_ids
         )
 
+        if "m" == current_register:
+            self.parse_measurement_lines(register_line)
+            return
+
         if (
             register_rules
             and register_rules[0]
@@ -911,6 +915,86 @@ class BC3ImportWizard(models.TransientModel):
             self._parse_register_data(
                 register_rules, register_line, current_register, model, render_func
             )
+
+    def parse_measurement_lines(self, parsed_lines):
+        if (
+            parsed_lines
+            and all(isinstance(item, str) for item in parsed_lines)
+            and not any(isinstance(item, (list, tuple)) for item in parsed_lines)
+        ):
+            parsed_lines = [parsed_lines]
+
+        for parsed_line in parsed_lines:
+            if not isinstance(parsed_line, (list, tuple)) or len(parsed_line) < 5:
+                continue
+
+            parts = parsed_line[1].split("\\")
+            parent_code = parts[1] if len(parts) > 1 else None
+
+            if not parent_code:
+                continue
+
+            order_line = self.env["sale.order.line"].search(
+                [
+                    ("order_id", "=", self.sale_id.id),
+                    ("bc3_code", "=", parent_code),
+                ],
+                limit=1,
+            )
+
+            if not order_line:
+                continue
+
+            raw = parsed_line[4].strip("\\")
+            groups = [grp for grp in raw.split("\\\\") if grp.strip()]
+
+            lines = []
+
+            for grp in groups:
+                if grp.strip() == "1":
+                    continue
+
+                elems = [e for e in grp.split("\\") if e]
+
+                if len(elems) < 4:
+                    continue
+
+                label = elems[0]
+
+                try:
+                    qty = float(elems[1])
+                    length = float(elems[2])
+                    width = float(elems[3])
+                    height = float(elems[4]) if len(elems) > 4 and elems[4] else 1.0
+                except ValueError:
+                    continue
+
+                partial = qty * length * width * height
+
+                if len(elems) > 4 and elems[4]:
+                    height_part = _(" x %(h)s (height)") % {"h": height}
+                else:
+                    height_part = ""
+
+                dims = _("%(l)s (length) x %(w)s (width)%(hp)s") % {
+                    "l": length,
+                    "w": width,
+                    "hp": height_part,
+                }
+
+                line_tpl = _("%s | %g (units) | %s | Partial: %.2f") % (
+                    label,
+                    qty,
+                    dims,
+                    partial,
+                )
+
+                lines.append(line_tpl)
+
+            if lines:
+                existing = order_line.name or ""
+                new_desc = existing + ("\n\n" if existing else "") + "\n".join(lines)
+                order_line.write({"name": new_desc})
 
     # Parseo
     def get_groups_matches(self, group_id, check_list, text, group_pattern):
