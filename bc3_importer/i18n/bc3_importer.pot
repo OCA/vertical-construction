@@ -14,6 +14,34 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(h)s (height)"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(l)s (length)"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(qty)g (units)"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(w)s (width)"
+msgstr ""
+
+#. module: bc3_importer
 #: model:res.groups,name:bc3_importer.group_bc3_manager
 msgid "Administrator"
 msgstr ""
@@ -385,6 +413,13 @@ msgstr ""
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Parsing error, missing data"
+msgstr ""
+
+#. module: bc3_importer
+#. odoo-python
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Partial: %(partial).2f"
 msgstr ""
 
 #. module: bc3_importer
