@@ -1,0 +1,94 @@
+<odoo>
+    <record id="view_order_form_certify" model="ir.ui.view">
+        <field name="name">sale.order.form.certify</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <!--Button
+            to show certifications-->
+            <xpath
+                expr="//div[@class='oe_button_box' and @name='button_box']"
+                position="inside"
+            >
+                <button
+                    name="action_view_certifications"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-certificate"
+                    invisible="not is_certifiable or state != 'sale' or certification_count == 0"
+                >
+                    <field
+                        name="certification_count"
+                        widget="statinfo"
+                        string="Certifications"
+                    />
+                </button>
+                <button
+                    name="action_view_retention_invoices"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-pencil-square"
+                    invisible="not is_certifiable or state != 'sale' or retention_invoice_count == 0"
+                >
+                    <field
+                        name="retention_invoice_count"
+                        widget="statinfo"
+                        string="Retention Invoices"
+                    />
+                </button>
+            </xpath>
+            <!--Button
+            to open the certifications wizard-->
+            <xpath expr="//header/button[1]" position="before">
+                <button
+                    name="%(sale_certification.action_view_certification_wizard)d"
+                    type="action"
+                    string="Certificate"
+                    class="oe_highlight"
+                    invisible="not is_certifiable or state != 'sale' or certified_percentage >= 100.0 or invoice_status != 'to invoice'"
+                />
+            </xpath>
+            <!--Certified
+            Percentage field-->
+            <xpath
+                expr="//field[@name='order_line']/tree/field[@name='qty_delivered']"
+                position="after"
+            >
+                <field name="certified_status" column_invisible="True" />
+                <field
+                    name="qty_certified"
+                    decoration-info="(not display_type and certified_status == 'to certify')"
+                    decoration-bf="(not display_type and certified_status == 'to certify')"
+                    string="Certified"
+                    column_invisible="parent.state != 'sale' or not parent.is_certifiable"
+                    optional="show"
+                />
+            </xpath>
+            <!--Field
+            to activate certification fields and buttons-->
+            <xpath expr="//field[@name='validity_date']" position="before">
+                <field name="is_certifiable" readonly="state != 'draft'" />
+                <field
+                    name="certified_percentage"
+                    widget="progressbar"
+                    options="{'max_value': 100}"
+                    readonly="True"
+                    invisible="not is_certifiable or state != 'sale'"
+                />
+            </xpath>
+            <xpath expr="//button[@id='create_invoice']" position="attributes">
+                <attribute
+                    name="invisible"
+                >invoice_status != 'to invoice' or is_certifiable</attribute>
+            </xpath>
+            <xpath
+                expr="//button[@id='create_invoice_percentage']"
+                position="attributes"
+            >
+                <attribute
+                    name="invisible"
+                >invoice_status != 'to invoice' or is_certifiable</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
