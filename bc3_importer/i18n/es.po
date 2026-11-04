@@ -18,6 +18,30 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 
 #. module: bc3_importer
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(h)s (height)"
+msgstr ""
+
+#. module: bc3_importer
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(l)s (length)"
+msgstr ""
+
+#. module: bc3_importer
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(qty)g (units)"
+msgstr ""
+
+#. module: bc3_importer
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "%(w)s (width)"
+msgstr ""
+
+#. module: bc3_importer
 #: model:res.groups,name:bc3_importer.group_bc3_manager
 msgid "Administrator"
 msgstr ""
@@ -408,6 +432,12 @@ msgstr ""
 #, python-format
 msgid "Parsing error, missing data"
 msgstr "Error de análisis sintáctico, faltan datos"
+
+#. module: bc3_importer
+#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
+#, python-format
+msgid "Partial: %(partial).2f"
+msgstr ""
 
 #. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__primary_key
