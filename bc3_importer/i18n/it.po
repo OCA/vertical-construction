@@ -22,7 +22,6 @@ msgid "Administrator"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.module.category,name:bc3_importer.module_bc3_importer
 #: model:ir.module.category,name:bc3_importer.module_bc3_importer_bc3
 #: model:ir.ui.menu,name:bc3_importer.bc3_files
 #: model:ir.ui.menu,name:bc3_importer.bc3_menuitem
@@ -201,7 +200,7 @@ msgid "Child"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__code
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__bc3_code
 msgid "Code"
 msgstr ""
 
@@ -242,11 +241,6 @@ msgid "Customer/Vendor"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__date
-msgid "Date"
-msgstr ""
-
-#. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__product_id
 msgid "Default product"
 msgstr ""
@@ -280,7 +274,6 @@ msgstr ""
 
 #. module: bc3_importer
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
-#: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Error parsing the file"
 msgstr ""
@@ -302,7 +295,7 @@ msgid "Header"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.module.category,description:bc3_importer.module_bc3_importer
+#: model:ir.module.category,description:bc3_importer.module_bc3_importer_bc3
 msgid "Helps you handle your bc3 files, versions and registers."
 msgstr ""
 
@@ -403,8 +396,8 @@ msgstr ""
 #. module: bc3_importer
 #: model_terms:ir.actions.act_window,help:bc3_importer.action_quotations_bc3
 msgid ""
-"Once the quotation is confirmed by the customer, it becomes a sales "
-"order.<br> You will be able to create an invoice and collect the payment."
+"Once the quotation is confirmed by the customer, it becomes a sales order."
+"<br> You will be able to create an invoice and collect the payment."
 msgstr ""
 
 #. module: bc3_importer

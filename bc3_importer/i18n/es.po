@@ -23,7 +23,6 @@ msgid "Administrator"
 msgstr ""
 
 #. module: bc3_importer
-#: model:ir.module.category,name:bc3_importer.module_bc3_importer
 #: model:ir.module.category,name:bc3_importer.module_bc3_importer_bc3
 #: model:ir.ui.menu,name:bc3_importer.bc3_files
 #: model:ir.ui.menu,name:bc3_importer.bc3_menuitem
@@ -202,7 +201,7 @@ msgid "Child"
 msgstr "Hijo"
 
 #. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__code
+#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__bc3_code
 msgid "Code"
 msgstr "Código"
 
@@ -241,11 +240,6 @@ msgstr "Creado el"
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__partner_id
 msgid "Customer/Vendor"
 msgstr "Cliente/Proveedor"
-
-#. module: bc3_importer
-#: model:ir.model.fields,field_description:bc3_importer.field_sale_order_line__date
-msgid "Date"
-msgstr "Fecha"
 
 #. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__product_id
@@ -302,7 +296,7 @@ msgid "Header"
 msgstr "Encabezado"
 
 #. module: bc3_importer
-#: model:ir.module.category,description:bc3_importer.module_bc3_importer
+#: model:ir.module.category,description:bc3_importer.module_bc3_importer_bc3
 msgid "Helps you handle your bc3 files, versions and registers."
 msgstr "Le ayuda a manejar sus archivos bc3, versiones y registros."
 
@@ -578,3 +572,6 @@ msgstr ""
 #: model:product.template,uom_name:bc3_importer.product_product_product_template_cubic_meter
 msgid "m³"
 msgstr ""
+
+#~ msgid "Date"
+#~ msgstr "Fecha"
