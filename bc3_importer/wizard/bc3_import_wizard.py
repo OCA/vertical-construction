@@ -68,6 +68,7 @@ class BC3ImportWizard(models.TransientModel):
         fname = fobj.name
         fobj.write(data)
         fobj.close()
+        measurement_registers = []
         try:
             rawdata = open(fname, "rb").read()
             encoding = chardet.detect(rawdata)["encoding"]
@@ -79,8 +80,11 @@ class BC3ImportWizard(models.TransientModel):
                     .split("~"),
                 )
             )
-            for f in file_content:
-                self._parse_register(f)
+            for line in file_content:
+                if line[:1].lower() == "m":
+                    measurement_registers.append(line)
+                    continue
+                self._parse_register(line)
             # do stuff here
         finally:
             # delete the file when done
@@ -197,6 +201,8 @@ class BC3ImportWizard(models.TransientModel):
                 )
                 if line and not (c in lines):
                     line.sudo().unlink()
+        for register in measurement_registers:
+            self._parse_measurement_register(register)
         return {
             "name": _("Show Sale Order"),
             "type": "ir.actions.act_window",
@@ -911,6 +917,73 @@ class BC3ImportWizard(models.TransientModel):
             self._parse_register_data(
                 register_rules, register_line, current_register, model, render_func
             )
+
+    def _parse_measurement_register(self, register):
+        fields_data = register.split("|")
+        if len(fields_data) < 5:
+            return
+        codes = fields_data[1].strip().replace("#", "").split("\\")
+        child_code = codes[-1]
+        parent_code = codes[0] if len(codes) > 1 else False
+        if not child_code:
+            return
+        order_line = self._get_measurement_order_line(parent_code, child_code)
+        if not order_line:
+            return
+        values = fields_data[4].replace("\r", "").replace("\n", "").split("\\")
+        if values[-1] == "":
+            values.pop()
+        rows = []
+        for i in range(0, len(values), 6):
+            row = self._format_measurement_row(values[i : i + 6])
+            if row:
+                rows.append(row)
+        if rows:
+            existing = order_line.name or ""
+            new_desc = existing + ("\n\n" if existing else "") + "\n".join(rows)
+            order_line.write({"name": new_desc})
+
+    def _get_measurement_order_line(self, parent_code, child_code):
+        SaleLine = self.env["sale.order.line"]
+        domain = [("order_id", "=", self.sale_id.id), ("bc3_code", "=", child_code)]
+        if parent_code and lines.get(parent_code):
+            order_line = SaleLine.search(
+                domain + [("id", "in", lines[parent_code])], limit=1
+            )
+            if order_line:
+                return order_line
+        return SaleLine.search(domain, limit=1)
+
+    def _format_measurement_row(self, row):
+        row_type, comment, *dimensions = row + [""] * (6 - len(row))
+        if row_type.strip() in ("1", "2"):
+            return False
+        try:
+            units, length, width, height = (
+                float(value) if value.strip() else None for value in dimensions
+            )
+        except ValueError:
+            return False
+        comment = comment.strip()
+        segments = [comment] if comment else []
+        if units is not None:
+            segments.append(_("%(qty)g (units)") % {"qty": units})
+        dims = []
+        if length is not None:
+            dims.append(_("%(l)s (length)") % {"l": length})
+        if width is not None:
+            dims.append(_("%(w)s (width)") % {"w": width})
+        if height is not None:
+            dims.append(_("%(h)s (height)") % {"h": height})
+        if dims:
+            segments.append(" x ".join(dims))
+        used = [value for value in (units, length, width, height) if value is not None]
+        if used and row_type.strip() != "3":
+            partial = 1.0
+            for value in used:
+                partial *= value
+            segments.append(_("Partial: %(partial).2f") % {"partial": partial})
+        return " | ".join(segments) or False
 
     # Parseo
     def get_groups_matches(self, group_id, check_list, text, group_pattern):
