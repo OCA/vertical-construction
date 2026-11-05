@@ -1,0 +1,10 @@
+.table-borderless-cert,
+.table-borderless-cert tbody,
+.table-borderless-cert thead,
+.table-borderless-cert tfoot,
+.table-borderless-cert tr,
+.table-borderless-cert td,
+.table-borderless-cert th {
+    border: 0 none !important;
+    padding: 5px 5px !important;
+}
