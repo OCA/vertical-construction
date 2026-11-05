@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_certification_wizard,Certification Wizard,model_certification_wizard,sales_team.group_sale_salesman,1,1,1,0
+access_certification_invoice_wizard,Certification Invoice Wizard,model_certification_invoice_wizard,sales_team.group_sale_salesman,1,1,1,0
+access_order_certification,Order Certification,model_order_certification,sales_team.group_sale_salesman,1,1,1,0
+access_order_certification_manager,Order Certification Manager,model_order_certification,sales_team.group_sale_manager,1,1,1,1
+access_certification_line,Certification Line,model_certification_line,sales_team.group_sale_salesman,1,1,1,1

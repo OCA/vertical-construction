@@ -1,0 +1,6 @@
+# Copyright 2025 Binhex <https://www.binhex.cloud>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+from . import test_sale_certification
+from . import test_certification_invoicing
+from . import test_certification_security
