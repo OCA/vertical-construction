@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-10-14 10:06+0000\n"
+"PO-Revision-Date: 2026-11-10 13:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,35 +14,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: bc3_importer
 #. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "%(h)s (height)"
-msgstr ""
+msgstr "%(h)s (altezza)"
 
 #. module: bc3_importer
 #. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "%(l)s (length)"
-msgstr ""
+msgstr "%(l)s (lunghezza)"
 
 #. module: bc3_importer
 #. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "%(qty)g (units)"
-msgstr ""
+msgstr "%(qty)g (unità)"
 
 #. module: bc3_importer
 #. odoo-python
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "%(w)s (width)"
-msgstr ""
+msgstr "%(w)s (larghezza)"
 
 #. module: bc3_importer
 #: model:res.groups,name:bc3_importer.group_bc3_manager
@@ -228,7 +228,7 @@ msgstr "Commento"
 #. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_import_wizard__company_id
 msgid "Company"
-msgstr ""
+msgstr "Azienda"
 
 #. module: bc3_importer
 #: model_terms:ir.actions.act_window,help:bc3_importer.action_quotations_bc3
@@ -424,7 +424,7 @@ msgstr "Errore elaborazione, dati mancanti"
 #: code:addons/bc3_importer/wizard/bc3_import_wizard.py:0
 #, python-format
 msgid "Partial: %(partial).2f"
-msgstr ""
+msgstr "Parziale: %(partial).2f"
 
 #. module: bc3_importer
 #: model:ir.model.fields,field_description:bc3_importer.field_bc3_version_register_rule__primary_key
@@ -578,37 +578,37 @@ msgstr "m2"
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__c
 msgid "~C"
-msgstr ""
+msgstr "~C"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__d
 msgid "~D"
-msgstr ""
+msgstr "~D"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__f
 msgid "~F"
-msgstr ""
+msgstr "~F"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__g
 msgid "~G"
-msgstr ""
+msgstr "~G"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__k
 msgid "~K"
-msgstr ""
+msgstr "~K"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__t
 msgid "~T"
-msgstr ""
+msgstr "~T"
 
 #. module: bc3_importer
 #: model:ir.model.fields.selection,name:bc3_importer.selection__bc3_version_register__name__v
 msgid "~V"
-msgstr ""
+msgstr "~V"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Ultima modifica il"
